@@ -2,14 +2,13 @@ const express = require("express");
 const router = express.Router();
 const authController = require("../controllers/auth");
 const homeController = require("../controllers/home");
-const postsController = require("../controllers/posts");
-const commentsController = require("../controllers/comments");
+const summonerController = require("../controllers/summoners");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
 //Main Routes - simplified for now
 router.get("/", homeController.getIndex);
-router.get("/profile", ensureAuth, postsController.getProfile);
-router.get("/feed", ensureAuth, postsController.getFeed);
+//router.get("/profile", ensureAuth, postsController.getProfile);
+router.get("/feed", ensureAuth, summonerController.getSummoners);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);

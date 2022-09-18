@@ -1,12 +1,21 @@
 <%- include('partials/header') -%>
+
+<form
+class="col-6"
+action="/summoner/createSummoner"
+method="POST"
+>
+<input type="text" class="form-control" id="summonerName" name="summonerName" placeholder="Riot Summoner Name">
+<button class="btn btn-primary" type="submit">Submit</button>
+</form>
+
+
   <div class="container">
     <div class="row justify-content-center mt-5">
       <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
+        <% for(var i=0; i<summoners.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
+            <%= summoners[i].summonerName %>: <%= summoners[i].summonerId %>
           </li>
         <% } %>
         </ul>
