@@ -12,6 +12,8 @@ const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
 const commentRoutes = require("./routes/comments");
 const summonerRoutes = require("./routes/summoners");
+const matchRoutes = require("./routes/matches");
+const summonerMatchRoutes = require("./routes/summonerMatches")
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -60,6 +62,8 @@ app.use("/", mainRoutes);
 app.use("/post", postRoutes);
 app.use("/comment", commentRoutes);
 app.use("/summoner", summonerRoutes);
+app.use("/match", matchRoutes);
+app.use("/summonerMatch", summonerMatchRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {

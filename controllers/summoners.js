@@ -1,20 +1,34 @@
 const Api = require('twisted')
 const Summoner = require("../models/Summoner");
+const SummonerMatch = require("../models/SummonerMatch");
+const Match = require("../models/Match")
 require("dotenv").config({ path: "./config/.env" });
 
 const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 
-console.log(TftApi, process.env.RIOT_API_KEY)
-
 module.exports = {
     getSummonerProfile: async (req, res) => {
         try {
-          const summoner = await Summoner.findById({ user: req.params.id });
-          res.render("summonerProfile.ejs", { summoner: summoner, user: req.user });
+          console.log("getSummonerProfile in summmonerController", req.params)
+          const summoner = await Summoner.find({ summonerName: req.params.summonerName });
+          console.log(summoner[0].summonerId)
+          const summonerMatches = await SummonerMatch.find({summonerId: summoner[0].summonerId});
+          console.log(req.params.summonerName, summonerMatches)
+          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, user: req.user });
         } catch (err) {
           console.log(err);
         }
       },
+    getProfiles: async (req, res) => {
+      try {
+        console.log("getProfiles in SummonerController")
+        const summoners = await Summoner.find().sort().lean();
+        console.log(summoners)
+        res.render("profile.ejs", { summoners: summoners, user: req.user });
+      } catch (err) {
+        console.log(err);
+      }
+    },
     createSummoner: async (req, res) => {
         console.log(req.body.summonerName, "Consts:", Api.Constants.Regions.AMERICA_NORTH)
         try {

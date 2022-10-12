@@ -1,0 +1,22 @@
+<%- include('partials/header') -%>
+
+<form
+class="col-6"
+action="/match/createMatch"
+method="POST"
+>
+<input type="text" class="form-control" id="matchId" name="matchId" placeholder="Riot Match ID">
+<button class="btn btn-primary" type="submit">Submit</button>
+</form>
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<matches.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <%= matches[i].matchId %>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>

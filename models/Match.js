@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
-const PostSchema = new mongoose.Schema({
+const MatchSchema = new mongoose.Schema({
+    matchId: String,
     metadata: {
         dataVersion: String,
         matchId: String,
         participants: [String]
     },
-
     info: {
         gameDate: Number,
         gameLength: Number,
@@ -15,7 +15,7 @@ const PostSchema = new mongoose.Schema({
         tftGameType: String,
         tftCoreSet: String,
         tftSetNumber: Number,
-        participants: [Schema.Types.Mixed]
+        participants: [mongoose.Schema.Types.Mixed],
         /*
         participants: [{
             augments: [String],
@@ -51,3 +51,5 @@ const PostSchema = new mongoose.Schema({
         */
     }
 })
+
+module.exports = mongoose.model("Match", MatchSchema);

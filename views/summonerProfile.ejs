@@ -8,22 +8,18 @@
               <a href="/logout" class="col-3 btn btn-primary">Logout</a>
           </div>
           <div class="mt-5">
-            <h2>Search for Summoner</h2>
-            <form action="/post/createPost" enctype="multipart/form-data" method="POST">
-              <div class="mb-3">
-                  <label for="title" class="form-label">Summoner Name</label>
-                  <input type="text" class="form-control" id="title" name="title">
-              </div>
-              <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+            <h2><%= summoner[0].summonerName %></h2>
+            <form action="/summoner/<%= summoner[0].summonerName %>/importMatches" enctype="multipart/form-data" method="POST">
+              <button type="submit" class="btn btn-primary" value="submit">Import New Matches</button>
             </form>
           </div>
       </div>
       <div class="col-6">
         <ul class="row list-unstyled">
-        <% for(var i=0; i<summoners.length; i++) {%>
+        <% for(var i=0; i<summonerMatches.length; i++) {%>
           <li class="col-6 justify-content-between mt-5">
-            <a href="/summoner/<%= summoners[i].summonerName%>">
-              <%= summoners[i].summonerName%>
+            <a href="/summoner/<%= summonerMatches[i].matchId%>">
+              <%= summonerMatches[i].matchId%>
             </a>
           </li>
         <% } %>
