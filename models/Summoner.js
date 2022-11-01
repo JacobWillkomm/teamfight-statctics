@@ -8,7 +8,17 @@ const SummonerSchema = new mongoose.Schema({
     summonerId: {
         type: String,
         required: true
-    }
+    },
+    //TODO
+    stats: {
+        topFourPlacements: Number,
+        weightedPlacements: Number,
+        games: Number,
+        augments : Map,
+        champions: Map,
+        traits: Map
+    },
+
 
 })
 

@@ -1,5 +1,6 @@
 const Api = require('twisted')
 const Match = require("../models/Match");
+const Summoner = require('../models/Summoner');
 const SummonerMatch = require("../models/SummonerMatch");
 require("dotenv").config({ path: "./config/.env" });
 
@@ -106,10 +107,10 @@ module.exports = {
             }
 
             //create summonerMatch in DB
-            await summonerMatch.create({
+            await SummonerMatch.create({
               summonerName: req.params.summonerName,
               summonerId: result.response.puuid,
-              matchId: matchList[i],
+              matchId: matchlist[i],
               data: {
                 augments: summonerMatchStats.augments,
                 goldLeft: summonerMatchStats.gold_left,
@@ -124,6 +125,7 @@ module.exports = {
                 units: summonerMatchStats.units
               }
             })
+
           }else if (summonerMatchInMongo.length === 0){ //if match exists && new summoner requests
             let matchStats = [...matchInMongo[0].info.participants]
             let summonerMatchStats

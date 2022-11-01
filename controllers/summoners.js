@@ -9,12 +9,16 @@ const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 module.exports = {
     getSummonerProfile: async (req, res) => {
         try {
-          console.log("getSummonerProfile in summmonerController", req.params)
           const summoner = await Summoner.find({ summonerName: req.params.summonerName });
-          console.log(summoner[0].summonerId)
-          const summonerMatches = await SummonerMatch.find({summonerId: summoner[0].summonerId});
-          console.log(req.params.summonerName, summonerMatches)
-          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, user: req.user });
+          const summonerMatches = await SummonerMatch.find({summonerId: summoner[0].summonerId}).lean();
+          const objSummonerMatches = summonerMatches
+          let stats = {}
+          let test = objSummonerMatches.reduce((sum, ele) => sum + (ele.data.placement <= 4 ? 1 : 0), 0)
+          stats.winrate = test/summonerMatches.length
+          console.log(test, stats)
+
+
+          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user });
         } catch (err) {
           console.log(err);
         }

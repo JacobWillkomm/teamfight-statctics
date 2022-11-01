@@ -1,32 +1,39 @@
 <%- include('partials/header') -%>
 <div class="container">
   <div class="row mt-5">
-      <div class="col-6">
-          <div>
-              <p><strong>User Name</strong>: <%= user.userName %></p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
-          </div>
+    <div class="row">
+      <div class="col-4">
           <div class="mt-5">
-            <h2><%= summoner[0].summonerName %></h2>
+            <h2 class="main-color"><%= summoner[0].summonerName %></h2>
             <form action="/summoner/<%= summoner[0].summonerName %>/importMatches" enctype="multipart/form-data" method="POST">
-              <button type="submit" class="btn btn-primary" value="submit">Import New Matches</button>
+              <button type="submit" class="btn btn-primary main-color-bg" value="submit">Import New Matches</button>
             </form>
           </div>
       </div>
-      <div class="col-6">
+      <div class ="col-8">
+        <div class="mt-5">
+          <h4>Win Rate:</h4>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-4">
+
+      </div>
+      <div class="col-8">
         <ul class="row list-unstyled">
-        <% for(var i=0; i<summonerMatches.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
+          <% for(var i=0; i<summonerMatches.length; i++) {%>
+          <li class="justify-content-between mt-5">
             <a href="/summoner/<%= summonerMatches[i].matchId%>">
               <%= summonerMatches[i].matchId%>
             </a>
           </li>
-        <% } %>
+          <% } %>
         </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>  
+          <div class="row justify-content-center mt-5">
+            <a class="btn btn-primary" href="/feed">Return to Feed</a>
+          </div>  
+        </div>
       </div>  
     </div>
   </div>

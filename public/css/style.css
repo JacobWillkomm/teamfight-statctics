@@ -1,0 +1,54 @@
+body a {
+    color: #909B8F;
+}
+body a:hover {
+    color: #F3F1F4;
+}
+body p, h4 {
+    color: #F3F1F4;
+}
+.title {
+    font-family: 'Roboto Slab', serif;
+}
+
+.title a {
+    text-decoration: none;
+}
+
+.main-color{
+    color: #438659;
+}
+
+.main-color-bg{
+    background-color: #438659;
+    border-color: #438659;
+}
+
+.main-color-bg:hover {
+    background-color: #F3F1F4;
+    border-color: #F3F1F4;
+}
+
+.back-color{
+    color: #312D2F;
+}
+
+.back-color-bg{
+    background-color: #312D2F;
+}
+
+.acc-1-color {
+    color: #6F6B5B;
+}
+
+.acc-1-color-bg {
+    background-color: #6F6B5B;
+}
+
+.acc-2-color {
+    color: #909B8F;
+}
+
+.acc-3-color{
+    color: #F3F1F4;
+}
