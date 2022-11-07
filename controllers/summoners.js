@@ -12,12 +12,11 @@ module.exports = {
         try {
           const summoner = await Summoner.find({ summonerName: req.params.summonerName });
           const summonerMatches = await SummonerMatch.find({summonerId: summoner[0].summonerId}).lean();
-
+          //Object used to calculate stats here instead of front
           let stats = {
-             
-            winrate: 0,
-            winrateRanked: 0,
-            winrateNormal: 0,
+            wins: 0,
+            winsRanked: 0,
+            winsNormal: 0,
             totalPlacement: 0,
             totalPlacementNormal: 0,
             totalPlacementRanked: 0,
@@ -28,24 +27,34 @@ module.exports = {
             units: {},
             traits: {},
           }
+          //For each match, track the stats
+          //      Placement represents the place the player got, 1 first, 8 last
+          //      So a lower ratio between # games & total score is better but data quality is limited by the # of games
+          //TODO: This could be saved as its own model (SummonerName as FK), so that the server doesn't have to recalculate.
+          //      This woud require a list of games that have been added to the stats
           summonerMatches.map((ele) => {
-            console.log(ele)
             let score = ele.data.placement
-            if(ele.data.queueId === '1090') {//Ranked queue
+            //Ranked queue : 1090
+            console.log(ele.data)
+            if(ele.data.queueId === '1090') {
               stats.rankedGames++;
               stats.totalPlacementRanked += ele.data.placement;
-              stats.winrateRanked += (ele.data.placement <= 4 ? 1 : 0);
-            }else { //Normal and Bonus games
+              stats.winsRanked += (ele.data.placement <= 4 ? 1 : 0);
+            }
+            //Normal and Bonus games
+            else {
               stats.normalGames++;
               stats.totalPlacementNormal += ele.data.placement;
-              stats.winrateNormal += (ele.data.placement <= 4 ? 1 : 0);
+              stats.winsNormal += (ele.data.placement <= 4 ? 1 : 0);
             }
+            //Total number of games and place
             stats.games++;
             stats.totalPlacement += ele.data.placement;
-            stats.winrate += (ele.data.placement <= 4 ? 1 : 0);
+            stats.wins += (ele.data.placement <= 4 ? 1 : 0);
 
+            //For each Unit in Units,
+            //  check for unit in our stats obect, and add it if not
             ele.data.units.map((unit) => {
-              console.log(unit.character_id)
               if(Object.hasOwn(stats.units, unit.character_id)){
                 stats.units[unit.character_id].score += score
                 stats.units[unit.character_id].games++
@@ -55,6 +64,9 @@ module.exports = {
                 stats.units[unit.character_id] = {score: score, games: 1, rank: score}
               }
             })
+
+            //for each Augment in Augments
+            //  check for augment in stats object, add if not
             ele.data.augments.map((aug) => {
               if(Object.hasOwn(stats.augments, aug)){
                 stats.augments[aug].score += score
@@ -64,18 +76,23 @@ module.exports = {
                 stats.augments[aug] = {score: score, games: 1, rank: score}
               }
             })
+
+            //for each trait in Traits
+            //  check for trait in our stats object
+            //TODO: Improve stats calculation:
+            //      -Traits have a teir
             ele.data.traits.map((trait) => {
-              if(Object.hasOwn(stat.traits, trait)){
-                stats.traits[trait].score += score
-                stats.traits[trait].games++
-                stats.traits[trait].rank = stats.traits[trait].score/stats.traits[trait].games
+              if(Object.hasOwn(stats.traits, trait.name)){
+                stats.traits[trait.name].score += score
+                stats.traits[trait.name].games++
+                stats.traits[trait.name].rank = stats.traits[trait.name].score/stats.traits[trait.name].games
               }else{
-                stats.traits[trait] = {score: score, games: 1, rank: score}
+                stats.traits[trait.name] = {score: score, games: 1, rank: score}
               }
             })
           })
 
-          console.log(stats.winrate/stats.games, stats.winrateRanked/stats.games, stats.units, stats.augments, stats.traits)
+          console.log(stats.wins/stats.games, stats.winsNormal/stats.normalGames, stats.winsRanked/stats.rankedGames)
 
 
           res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user });

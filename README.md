@@ -21,6 +21,7 @@
 
 # TODO:
 - Summoner Profile Stats
+- Assets
 - Fix login landing page
 - Global Stats
 - Queue to handle requests to Riot

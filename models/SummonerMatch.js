@@ -28,6 +28,7 @@ const SummonerMatchSchema = new mongoose.Schema({
         puuid: String,
         timeEliminated: Number,
         damageToPlayer: Number,
+        queueId: String,
         traits: [mongoose.Schema.Types.Mixed],
         units: [mongoose.Schema.Types.Mixed]
         // traits: [{

@@ -11,11 +11,26 @@
           </div>
       </div>
       <div class ="col-8">
-        <div class="mt-5">
-          <h4>Win Rate:</h4>
+        <div class="mt-5 profile-stats">
+          <ul>
+            <li>
+              <h3><%= ((stats.wins/stats.games)*100).toFixed(2) %></h3>
+              <span>Win Rate</span>
+            </li>
+            <li>
+              <h3><%= ((stats.winsNormal/stats.normalGames)*100).toFixed(2) %></h3>
+              <span>Normal</span>
+            </li>
+            <li>
+              <h3><%= ((stats.winsRanked/stats.rankedGames)*100).toFixed(2) %></h3>
+              <span>Ranked</span>
+            </li>
+          </ul>
+          
         </div>
       </div>
     </div>
+
     <div class="row">
       <div class="col-4">
 

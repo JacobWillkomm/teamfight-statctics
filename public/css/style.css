@@ -4,8 +4,20 @@ body a {
 body a:hover {
     color: #F3F1F4;
 }
-body p, h4 {
+body p, li, h4 {
     color: #F3F1F4;
+}
+
+.profile-stats ul{
+    display: flex;
+    border: 1px solid white;
+    padding: 0;
+}
+.profile-stats li{
+    width: 25%;
+    border: 1px solid white;
+    text-decoration: none;
+    list-style: none;
 }
 .title {
     font-family: 'Roboto Slab', serif;

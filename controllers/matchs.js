@@ -47,12 +47,20 @@ module.exports = {
         console.log(err);
       }
     },
+    //importMatches is triggered by a request, and includes summonerName as a parameter
+    //   We get the puuid from Riot based on SummonerName
+    //      TODO: just pass the puuid in the request?
+    //   We get the list of matches from Riot API based on the puuid
+    //   For each match:
+    //      Check for the match in our DB:
+    //          FALSE: -Make a Match request to riot
+    //                 -Save Match request
+    //                 -Create a SummonerMatch for the Summoner and the Match
+    
     importMatches: async (req, res) =>{
       function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
       }
-
-      console.log("importMatches")
       try{
         //riot api: get matches from summoner name
         console.log(req.params)
