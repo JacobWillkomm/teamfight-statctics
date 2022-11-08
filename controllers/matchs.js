@@ -56,13 +56,15 @@ module.exports = {
     //          FALSE: -Make a Match request to riot
     //                 -Save Match request
     //                 -Create a SummonerMatch for the Summoner and the Match
+    //
+    //          TRUE:  -Create SummonerMatch if it doesn't already exist
     
     importMatches: async (req, res) =>{
       function delay(time) {
         return new Promise(resolve => setTimeout(resolve, time));
       }
       try{
-        //riot api: get matches from summoner name
+        //Get Matches from Riot api using puuid
         console.log(req.params)
         const result = await TftApi.Summoner.getByName( req.params.summonerName, Api.Constants.Regions.AMERICA_NORTH)
         console.log(result.response, result.response.puuid)
