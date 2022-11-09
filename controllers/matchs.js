@@ -74,9 +74,10 @@ module.exports = {
 
         for(let i = 0; i < matchlist.length; i++){
           //Look for match in local database
+          //TODO: can we improve checking the DB for a summonerMatch?
+          //       -Get a list of Matches from both riot and DB and compare
           let matchInMongo = await Match.find({matchId: matchlist[i]}).limit(1);
           let summonerMatchInMongo = await SummonerMatch.find({summonerName: req.params.summonerName, matchId: matchlist[i]}).limit(1);
-          console.log(matchInMongo,summonerMatchInMongo)
           if(matchInMongo.length === 0){ //not in local db
             //make a request to Riot
             await delay(500)
@@ -111,7 +112,7 @@ module.exports = {
             //loop through player stats and grab ours
             for(let j = 0; j < matchStats.length; j++){
               if(matchStats[j].puuid === result.response.puuid){
-                console.log(req.params.summonerName, " found")
+                console.log(matchRequest.response.metadata.match_id)
                 summonerMatchStats = matchStats[j]
               }
             }
@@ -131,6 +132,7 @@ module.exports = {
                 puuid: summonerMatchStats.puuid,
                 timeEliminated: summonerMatchStats.time_eliminated,
                 damageToPlayer: summonerMatchStats.total_damage_to_players,
+                queueId: summonerMatchStats.queue_id,
                 traits: summonerMatchStats.traits,
                 units: summonerMatchStats.units
               }
@@ -163,6 +165,7 @@ module.exports = {
                 puuid: summonerMatchStats.puuid,
                 timeEliminated: summonerMatchStats.time_eliminated,
                 damageToPlayer: summonerMatchStats.total_damage_to_players,
+                queueId: summonerMatchStats.queue_id,
                 traits: summonerMatchStats.traits,
                 units: summonerMatchStats.units
               }
