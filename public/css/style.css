@@ -10,14 +10,35 @@ body p, li, h4 {
 
 .profile-stats ul{
     display: flex;
-    border: 1px solid white;
     padding: 0;
+    justify-content: center;
 }
 .profile-stats li{
     width: 25%;
-    border: 1px solid white;
     text-decoration: none;
     list-style: none;
+    text-align: center;
+}
+.profile-stats h4{
+    text-align: left;
+}
+.profile-stats h5{
+    margin-top: 15px;
+    font-size: larger;
+}
+.sub-stats li{
+    margin: 0 5%;
+    font-style: italic;
+    color: #F3F1F4;
+    opacity: 50%;
+}
+.top-traits {
+    flex-wrap: wrap;
+}
+.top-traits li{
+    text-align: left;
+    width: 100%;
+    font-size: smaller;
 }
 .title {
     font-family: 'Roboto Slab', serif;

@@ -34,9 +34,8 @@ module.exports = {
           //      This woud require a list of games that have been added to the stats
           summonerMatches.map((ele) => {
             let score = ele.data.placement
-            //Ranked queue : 1090
-            console.log(ele.data)
-            if(ele.data.queueId === '1090') {
+            //Ranked queue : 1100
+            if(ele.data.queueId === '1100') {
               stats.rankedGames++;
               stats.totalPlacementRanked += ele.data.placement;
               stats.winsRanked += (ele.data.placement <= 4 ? 1 : 0);
@@ -93,7 +92,9 @@ module.exports = {
           })
 
           console.log(stats.wins/stats.games, stats.winsNormal/stats.normalGames, stats.winsRanked/stats.rankedGames)
-
+          stats.traitArray = Object.entries(stats.traits).filter(ele => ele[1].games > 4).sort((a,b) => a[1].rank - b[1].rank)
+          stats.augmentArray = Object.entries(stats.augments).filter(ele => ele[1].games > 1).sort((a,b) => a[1].rank - b[1].rank)
+          console.log(stats.traitArray, stats.augmentArray)
 
           res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user });
         } catch (err) {

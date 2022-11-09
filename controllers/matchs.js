@@ -58,6 +58,7 @@ module.exports = {
     //                 -Create a SummonerMatch for the Summoner and the Match
     //
     //          TRUE:  -Create SummonerMatch if it doesn't already exist
+    //      Redirect back
     
     importMatches: async (req, res) =>{
       function delay(time) {
@@ -68,9 +69,10 @@ module.exports = {
         console.log(req.params)
         const result = await TftApi.Summoner.getByName( req.params.summonerName, Api.Constants.Regions.AMERICA_NORTH)
         console.log(result.response, result.response.puuid)
-        const matchlistRequest = await TftApi.Match.list(result.response.puuid, Api.Constants.RegionGroups.AMERICAS)
+        const matchlistRequest = await TftApi.Match.list(result.response.puuid, Api.Constants.RegionGroups.AMERICAS, {count: 100})
         const matchlist = [...matchlistRequest.response]
         console.log(matchlist)
+        await delay(3000)
 
         for(let i = 0; i < matchlist.length; i++){
           //Look for match in local database
@@ -112,7 +114,6 @@ module.exports = {
             //loop through player stats and grab ours
             for(let j = 0; j < matchStats.length; j++){
               if(matchStats[j].puuid === result.response.puuid){
-                console.log(matchRequest.response.metadata.match_id)
                 summonerMatchStats = matchStats[j]
               }
             }
@@ -132,7 +133,7 @@ module.exports = {
                 puuid: summonerMatchStats.puuid,
                 timeEliminated: summonerMatchStats.time_eliminated,
                 damageToPlayer: summonerMatchStats.total_damage_to_players,
-                queueId: summonerMatchStats.queue_id,
+                queueId: matchRequest.response.info.queue_id,
                 traits: summonerMatchStats.traits,
                 units: summonerMatchStats.units
               }
@@ -144,11 +145,9 @@ module.exports = {
 
             for(let j = 0; j < matchStats.length; j++){
               if(matchStats[j].puuid === result.response.puuid){
-                console.log(req.params.summonerName, " found")
                 summonerMatchStats = matchStats[j]
               }
             }
-            console.log(summonerMatchStats.augments)
             //create summonerMatch
             await SummonerMatch.create({
               summonerName: req.params.summonerName,
@@ -165,7 +164,7 @@ module.exports = {
                 puuid: summonerMatchStats.puuid,
                 timeEliminated: summonerMatchStats.time_eliminated,
                 damageToPlayer: summonerMatchStats.total_damage_to_players,
-                queueId: summonerMatchStats.queue_id,
+                queueId: matchInMongo[0].info.queueId,
                 traits: summonerMatchStats.traits,
                 units: summonerMatchStats.units
               }
