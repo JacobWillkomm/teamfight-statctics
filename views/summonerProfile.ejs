@@ -1,6 +1,7 @@
 <%- include('partials/header') -%>
 <div class="container">
-  <div class="row mt-5">ç
+  <div class="row mt-5">
+    <div class="row">
       <div class="col-4">
           <div class="mt-5">
             <h2 class="main-color"><%= summoner[0].summonerName %></h2>
@@ -31,18 +32,18 @@
             <li>
               <h4>Top Traits</h4>
               <ul class="top-traits">
-                <li><%= stats.traitArray[0][0].split('_')[1] %></li>
-                <li><%= stats.traitArray[1][0].split('_')[1] %></li>
-                <li><%= stats.traitArray[2][0].split('_')[1] %></li>
+                <li><img src="../imgs/traits/<%=stats.traitArray[0][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[0][0].split('_')[1] %></li>
+                <li><img src="../imgs/traits/<%=stats.traitArray[1][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[1][0].split('_')[1] %></li>
+                <li><img src="../imgs/traits/<%=stats.traitArray[2][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[2][0].split('_')[1] %></li>
               </ul>
               
             </li>
             <li>
               <h4>Top Augments</h4>
               <ul class="top-traits">
-                <li><%= stats.augmentArray[0][0].split('_')[2] %></li>
-                <li><%= stats.augmentArray[1][0].split('_')[2] %></li>
-                <li><%= stats.augmentArray[2][0].split('_')[2] %></li>
+                <li><img src="../imgs/traits/legend.png"><%= stats.augmentArray[0][0].split('_')[2] %></li>
+                <li><img src="../imgs/traits/legend.png"><%= stats.augmentArray[1][0].split('_')[2] %></li>
+                <li><img src="../imgs/traits/legend.png"><%= stats.augmentArray[2][0].split('_')[2] %></li>
               </ul>
               
             </li>
@@ -71,6 +72,7 @@
         </div>
       </div>  
     </div>
+  </div>
   </div>
 </div>
 <%- include('partials/footer') -%>

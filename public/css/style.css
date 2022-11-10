@@ -40,6 +40,10 @@ body p, li, h4 {
     width: 100%;
     font-size: smaller;
 }
+.top-traits img{
+    height: 35px;
+    margin-right: 5px;
+}
 .title {
     font-family: 'Roboto Slab', serif;
 }
