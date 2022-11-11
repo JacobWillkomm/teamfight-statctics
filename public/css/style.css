@@ -42,7 +42,13 @@ body p, li, h4 {
 }
 .top-traits img{
     height: 35px;
-    margin-right: 5px;
+    margin: 0 5px;
+}
+.match-list li{
+    height: 150px;
+    border-left: lightgray 1px solid;
+
+
 }
 .title {
     font-family: 'Roboto Slab', serif;
