@@ -1,10 +1,10 @@
-# Install
+# Install:
 
 `npm install`
 
 ---
 
-# Things to add
+# Setup:
 
 - Create a `.env` file in config folder and add the following as `key = value`
   - PORT = 8000
@@ -13,7 +13,7 @@
 
 ---
 
-# Run
+# Run:
 
 
 `npm start`
