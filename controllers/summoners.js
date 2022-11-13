@@ -94,7 +94,8 @@ module.exports = {
           console.log(stats.wins/stats.games, stats.winsNormal/stats.normalGames, stats.winsRanked/stats.rankedGames)
           stats.traitArray = Object.entries(stats.traits).filter(ele => ele[1].games > 4).sort((a,b) => a[1].rank - b[1].rank)
           stats.augmentArray = Object.entries(stats.augments).filter(ele => ele[1].games > 1).sort((a,b) => a[1].rank - b[1].rank)
-          console.log(stats.traitArray, stats.augmentArray)
+          stats.unitArray = Object.entries(stats.units).sort()
+          console.log(stats.unitArray)
 
           res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user });
         } catch (err) {

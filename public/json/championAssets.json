@@ -7,41 +7,45 @@
             "anivia" : {
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_anivia_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "aoshin" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_aoshin_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "aphelios" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_aphelios_mobile.tft_set7_stage2.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "ashe" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_ashe_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "aurelionsol" : {
+                "name" : "Aurelion Sol",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_aurelionsol_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "bard" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_bard_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "braum" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_braum_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "corki" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_corki_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "diana" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_diana_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "dragonearth" : {
+                "name" : "Terra",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_dragonearth_mobile.tft_set7_stage2.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "dragongreen" : {
+                "name" : "Shi Oh Yu",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_dragongreen_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "dragonswain" : {
+                "name" : "Dragon Tyrant Swain"
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_dragonswain_mobile.tft_set7_stage2.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "elise" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_elise_mobile.tft_set7.png"
             },
             "_champion_name" : {
                 "assetUrl" : ""
