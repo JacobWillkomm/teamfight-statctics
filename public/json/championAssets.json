@@ -47,6 +47,113 @@
             "elise" : {
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_elise_mobile.tft_set7.png"
             },
+            "ezreal" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_ezreal_mobile.tft_set7.png"
+            },
+            "gnar" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_gnar_mobile.tft_set7.png"
+            },
+            "graves" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_graves_mobile.tft_set7_stage2.png"
+            },
+            "hecarim" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_hecarim_mobile.tft_set7.png"
+            },
+            "heimerdinger" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_heimerdinger_mobile.tft_set7.png"
+            },
+            "illaoi" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_illaoi_mobile.tft_set7.png"
+            },
+            "jax" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_jax_mobile.tft_set7_stage2.png"
+            },
+            "jayce" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_jayce_mobile.tft_set7_stage2.png"
+            },
+            "jinx" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_jinx_mobile.tft_set7.png"
+            },
+            "kaisa" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_kaisa_mobile.tft_set7_stage2.png"
+            },
+            "karma" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_karma_mobile.tft_set7.png"
+            },
+            "kayne" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_kayn_mobile.tft_set7.png"
+            },
+            "leesin" : {
+                "name" : "Lee Sin",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_leesin_mobile.tft_set7.png"
+            },
+            "leona" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_leona_mobile.tft_set7.png"
+            },
+            "lillia" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_lillia_mobile.tft_set7.png"
+            },
+            "lulu" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_lulu_mobile.tft_set7.png"
+            },
+            "lux" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_lux_mobile.tft_set7_stage2.png"
+            },
+            "malphite" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_malphite_mobile.tft_set7_stage2.png"
+            },
+            "miragedragon" : {
+                "name" : "Daeja",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_miragedragon_mobile.tft_set7.png"
+            },
+            "nami" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_nami_mobile.tft_set7.png"
+            },
+            "nasus" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_nasus_mobile.tft_set7_stage2.png"
+            },
+            "neeko" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_neeko_mobile.tft_set7.png"
+            },
+            "nidalee" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_nidalee_mobile.tft_set7.png"
+            },
+            "nilah" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_nilah_mobile.tft_set7_stage2.png"
+            },
+            "nomsy" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_nomsy_mobile.tft_set7_stage2.png"
+            },
+            "nunu" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_nunu_mobile.tft_set7.png"
+            },
+            "olaf" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_olaf_mobile.tft_set7.png"
+            },
+            "ornn" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_ornn_mobile.tft_set7.png"
+            },
+            "pantheon" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_pantheon_mobile.tft_set7_stage2.png"
+            },
+            "_champion_name" : {
+                "assetUrl" : ""
+            },
+            "_champion_name" : {
+                "assetUrl" : ""
+            },
+            "_champion_name" : {
+                "assetUrl" : ""
+            },
+            "_champion_name" : {
+                "assetUrl" : ""
+            },
+            "_champion_name" : {
+                "assetUrl" : ""
+            },
+            "_champion_name" : {
+                "assetUrl" : ""
+            },
             "_champion_name" : {
                 "assetUrl" : ""
             },
