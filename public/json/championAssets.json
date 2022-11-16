@@ -136,41 +136,103 @@
             "pantheon" : {
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_pantheon_mobile.tft_set7_stage2.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "pyke" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_pyke_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "qiyana" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_qiyana_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "rakan" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_rakan_mobile.tft_set7_stage2.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "rell" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_rell_mobile.tft_set7_stage2.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "rengar" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_rengar_mobile.tft_set7_stage2.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "ryze" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_ryze_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "sejuani" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_sejuani_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "senna" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_senna_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "seraphine" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_seraphine_mobile.tft_set7_stage2.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "sett" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_sett_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "shen" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_shen_mobile.tft_set7.png"
             },
-            "_champion_name" : {
-                "assetUrl" : ""
+            "shimmerscaledragon" : {
+                "name" : "Idas",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_shimmerscaledragon_mobile.tft_set7.png"
+            },
+            "shyvana" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_shyvana_mobile.tft_set7.png"
+            },
+            "skarner" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_skarner_mobile.tft_set7.png"
+            },
+            "sohm" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_sohm_mobile.tft_set7_stage2.png"
+            },
+            "soraka" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_soraka_mobile.tft_set7.png"
+            },
+            "sylas" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_sylas_mobile.tft_set7.png"
+            },
+            "taliyah" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_taliyah_mobile.tft_set7_stage2.png"
+            },
+            "twitch" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_twitch_mobile.tft_set7.png"
+            },
+            "varus" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_varus_mobile.tft_set7.png"
+            },
+            "vladimir" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_vladimir_mobile.tft_set7.png"
+            },
+            "volibear" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_volibear_mobile.tft_set7.png"
+            },
+            "whispersdragon" : {
+                "name" : "Sy'fen",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_whispersdragon_mobile.tft_set7.png"
+            },
+            "wukong" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_wukong_mobile.tft_set7_stage2.png"
+            },
+            "xayah" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_xayah_mobile.tft_set7.png"
+            },
+            "yasuo" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_yasuo_mobile.tft_set7.png"
+            },
+            "yone" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_yone_mobile.tft_set7.png"
+            },
+            "zac" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_zac_mobile.tft_set7_stage2.png"
+            },
+            "zeri" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_zeri_mobile.tft_set7_stage2.png"
+            },
+            "zippy" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_zippy_mobile.tft_set7_stage2.png"
+            },
+            "zoe" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_zoe_mobile.tft_set7.png"
+            },
+            "zyra" : {
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_zyra_mobile.tft_set7_stage2.png"
             },
         }
     }
