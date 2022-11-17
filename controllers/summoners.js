@@ -4,6 +4,11 @@ const SummonerMatch = require("../models/SummonerMatch");
 const Match = require("../models/Match");
 const { StatusApi } = require('twisted/dist/apis/lol/status/status');
 require("dotenv").config({ path: "./config/.env" });
+const fs = require('fs');
+let rawChampionAssets = fs.readFileSync("./public/json/championAssets.json")
+let championAssets = JSON.parse(rawChampionAssets);
+
+console.log(championAssets.set_7)
 
 const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 
@@ -60,7 +65,13 @@ module.exports = {
                 stats.units[unit.character_id].rank = stats.units[unit.character_id].score /stats.units[unit.character_id].games
               }
               else{
-                stats.units[unit.character_id] = {score: score, games: 1, rank: score}
+                console.log(unit)
+                stats.units[unit.character_id] = {score: score, games: 1, rank: score, assetUrl: championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl}
+                if(Object.hasOwn(championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()], "name")){
+                  stats.units[unit.character_id].name = championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()].name
+                }else{
+                  stats.units[unit.character_id].name = unit.character_id.split('_')[1]
+                }
               }
             })
 
@@ -79,7 +90,7 @@ module.exports = {
             //for each trait in Traits
             //  check for trait in our stats object
             //TODO: Improve stats calculation:
-            //      -Traits have a teir
+            //      -Traits have a tier
             ele.data.traits.map((trait) => {
               if(Object.hasOwn(stats.traits, trait.name)){
                 stats.traits[trait.name].score += score
@@ -90,14 +101,13 @@ module.exports = {
               }
             })
           })
-
           console.log(stats.wins/stats.games, stats.winsNormal/stats.normalGames, stats.winsRanked/stats.rankedGames)
           stats.traitArray = Object.entries(stats.traits).filter(ele => ele[1].games > 4).sort((a,b) => a[1].rank - b[1].rank)
           stats.augmentArray = Object.entries(stats.augments).filter(ele => ele[1].games > 1).sort((a,b) => a[1].rank - b[1].rank)
           stats.unitArray = Object.entries(stats.units).sort()
-          console.log(stats.unitArray)
+          console.log(summonerMatches[0].data.units)
 
-          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user });
+          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user, assets: championAssets.set_7.champions });
         } catch (err) {
           console.log(err);
         }

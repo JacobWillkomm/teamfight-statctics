@@ -47,8 +47,10 @@ body p, li, h4 {
 .match-list li{
     height: 150px;
     border-left: lightgray 1px solid;
-
-
+}
+.unit-list li{
+    height: auto;
+    border: white 0 solid;
 }
 .title {
     font-family: 'Roboto Slab', serif;

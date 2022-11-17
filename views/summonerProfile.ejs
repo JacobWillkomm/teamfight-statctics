@@ -63,6 +63,13 @@
             <a href="/summoner/<%= summonerMatches[i].matchId%>">
               <%= summonerMatches[i].matchId%>
             </a>
+            <ul class="unit-list">
+              <% for(var j=0; j<summonerMatches[i].data.units.length; j++) {%>
+                <li>
+                  <%= assets[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].name %>
+                </li>
+              <% } %>
+            </ul>
           </li>
           <% } %>
         </ul>
