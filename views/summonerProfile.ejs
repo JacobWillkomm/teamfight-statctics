@@ -59,18 +59,51 @@
       <div class="col-8">
         <ul class="row list-unstyled match-list">
           <% for(var i=0; i<summonerMatches.length; i++) {%>
-          <li class="justify-content-between mt-5">
+          <li>
+            <ul class="match-stats">
+              <li class="unit-list">
+                <span>Team</span>
+                <ul>
+                  <% for(var j=0; j<summonerMatches[i].data.units.length; j++) {%>
+                    <li>
+                      <img src="<%= assets[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>"> 
+                      <%= assets[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].name %>
+                    </li>
+                  <% } %>
+                </ul>
+              </li>
+              <li class="match-trait-list">
+                <span>Traits</span>
+                <ul>
+                  <% for(var j=0; j<summonerMatches[i].data.traits.length; j++) {%>
+                    <% if(summonerMatches[i].data.traits[j].tier_current > 0) { %>
+                    <li>
+                      <%= summonerMatches[i].data.traits[j].name.split('_')[1] %>
+                    </li>
+                    <% } %>
+                  <% } %>
+                </ul>
+              </li>
+              <li class="match-augments">
+                <span>Augments</span>
+                <ul>
+                  <% for(var j=0; j<summonerMatches[i].data.augments.length; j++) { %>
+                    <li>
+                      <%= summonerMatches[i].data.augments[j].split('_')[2] %>
+                    </li>
+                  <% } %>
+                </ul>
+              </li>
+              <li>
+                <span>Rank</span>
+              </li>
+
+            </ul>
+          </li>
             <a href="/summoner/<%= summonerMatches[i].matchId%>">
               <%= summonerMatches[i].matchId%>
             </a>
-            <ul class="unit-list">
-              <% for(var j=0; j<summonerMatches[i].data.units.length; j++) {%>
-                <li>
-                  <img src="<%= assets[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>"> 
-                  <%= assets[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].name %>
-                </li>
-              <% } %>
-            </ul>
+
           </li>
           <% } %>
         </ul>

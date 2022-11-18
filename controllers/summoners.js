@@ -65,7 +65,6 @@ module.exports = {
                 stats.units[unit.character_id].rank = stats.units[unit.character_id].score /stats.units[unit.character_id].games
               }
               else{
-                console.log(unit)
                 stats.units[unit.character_id] = {score: score, games: 1, rank: score, assetUrl: championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl}
                 if(Object.hasOwn(championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()], "name")){
                   stats.units[unit.character_id].name = championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()].name
@@ -105,7 +104,7 @@ module.exports = {
           stats.traitArray = Object.entries(stats.traits).filter(ele => ele[1].games > 4).sort((a,b) => a[1].rank - b[1].rank)
           stats.augmentArray = Object.entries(stats.augments).filter(ele => ele[1].games > 1).sort((a,b) => a[1].rank - b[1].rank)
           stats.unitArray = Object.entries(stats.units).sort()
-          console.log(summonerMatches[0].data.units)
+          console.log(summonerMatches[0].data.augments)
 
           res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user, assets: championAssets.set_7.champions });
         } catch (err) {

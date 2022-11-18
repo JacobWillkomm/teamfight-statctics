@@ -48,12 +48,56 @@ body p, li, h4 {
     height: 150px;
     border-left: lightgray 1px solid;
 }
+.match-stats{
+    display: flex;
+    list-style: none;
+    padding: 0;
+}
+.unit-list{
+    width: 50%;
+}
+.unit-list ul{
+    display:flex;
+    flex-wrap: wrap;
+    padding: 0;
+}
 .unit-list li{
     height: auto;
+    width: 33.33%;
     border: white 0 solid;
+    list-style: none;
+    padding: 2px;
 }
 .unit-list img{
     height: 35px;
+}
+
+.match-trait-list {
+    width: 20%;
+}
+.match-trait-list ul{
+    list-style: none;
+    padding: 0;
+}
+.match-trait-list li {
+    height: auto;
+    font-size: smaller;
+}
+
+.match-augments {
+    width: 20%;
+}
+.match-augments ul {
+    padding: 0;
+    list-style: none;
+}
+.match-augments li{
+    height: auto;
+    font-size: smaller;
+}
+
+.match-stats li{
+    border: white 0 solid;
 }
 .title {
     font-family: 'Roboto Slab', serif;

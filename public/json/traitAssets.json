@@ -1,0 +1,28 @@
+{
+    "set_7" : {
+        "astral" : {
+            "name" : "Astral",
+            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_7_astral.png"
+        },
+        "bard" : {
+            "name" : "Bard",
+            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_7_bard.png"
+        },
+        "dragon" : {
+            "name" : "Dragon",
+            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_7_dragon.png"
+        },
+        "scalescorn" : {
+            "name" : "Scalescorn",
+            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_7_dragonbane.png"
+        },
+        "Dragonmancer" : {
+            "name" : "Dragonmancer",
+            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_7_dragonmancer.png"
+        },
+        "evoker" : {
+            "name" : "Evoker",
+            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_7_evoker.png"
+        }
+    }
+}
