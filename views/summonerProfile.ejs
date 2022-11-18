@@ -66,6 +66,7 @@
             <ul class="unit-list">
               <% for(var j=0; j<summonerMatches[i].data.units.length; j++) {%>
                 <li>
+                  <img src="<%= assets[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>"> 
                   <%= assets[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].name %>
                 </li>
               <% } %>
