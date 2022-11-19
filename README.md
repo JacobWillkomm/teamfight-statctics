@@ -21,10 +21,10 @@
 
 # TODO:
 - Summoner Profile Stats
-- - ~~Champion Assets~~
-- - Borders based on Tier
-- - Star lv
-- - Detailed stats for match on summonerProfile
+-- ~~Champion Assets~~
+-- Borders based on Tier
+-- Star lv
+-- Detailed stats for match on summonerProfile
 - Fix login landing page
 - Global Stats
 - Queue to handle requests to Riot
