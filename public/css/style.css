@@ -52,6 +52,9 @@ body p, li, h4 {
     height: auto;
     border: white 0 solid;
 }
+.unit-list img{
+    height: 35px;
+}
 .title {
     font-family: 'Roboto Slab', serif;
 }
