@@ -19,7 +19,7 @@
                 <li><%= ((stats.winsNormal/stats.normalGames)*100).toFixed(2) %></li>
                 <li><%= ((stats.winsRanked/stats.rankedGames)*100).toFixed(2) %></li>
               </ul>
-              <h5>Win Rate</h5>
+              <h5>Top 4 Win %</h5>
             </li>
             <li>
               <h3><%= ((stats.totalPlacement/stats.games)).toFixed(2) %></h3>
@@ -27,24 +27,32 @@
                 <li><%= ((stats.totalPlacementNormal/stats.normalGames)).toFixed(2) %></li>
                 <li><%= ((stats.totalPlacementRanked/stats.rankedGames)).toFixed(2) %></li>
               </ul>
-              <h5>Avg. Place</h5>
+              <h5>Avg. Rank</h5>
             </li>
             <li>
               <h4>Top Traits</h4>
+              <% if(stats.traitArray.length > 2) { %>
               <ul class="top-traits">
                 <li><img src="../imgs/traits/<%=stats.traitArray[0][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[0][0].split('_')[1] %></li>
                 <li><img src="../imgs/traits/<%=stats.traitArray[1][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[1][0].split('_')[1] %></li>
                 <li><img src="../imgs/traits/<%=stats.traitArray[2][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[2][0].split('_')[1] %></li>
               </ul>
+              <% } else { %>
+                <span>Please import matches</span>
+              <% } %>
               
             </li>
             <li>
               <h4>Top Augments</h4>
+              <% if(stats.traitArray.length > 2) { %>
               <ul class="top-traits">
                 <li><img src="../imgs/traits/legend.png"><%= stats.augmentArray[0][0].split('_')[2] %></li>
                 <li><img src="../imgs/traits/legend.png"><%= stats.augmentArray[1][0].split('_')[2] %></li>
                 <li><img src="../imgs/traits/legend.png"><%= stats.augmentArray[2][0].split('_')[2] %></li>
               </ul>
+              <% } else { %>
+                <span>Please import matches</span>
+              <% } %>
               
             </li>
           </ul>
@@ -94,8 +102,9 @@
                   <% } %>
                 </ul>
               </li>
-              <li>
+              <li class="match-placement">
                 <span>Rank</span>
+                <h2><%= summonerMatches[i].data.placement %></h2>
               </li>
 
             </ul>

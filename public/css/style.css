@@ -45,7 +45,7 @@ body p, li, h4 {
     margin: 0 5px;
 }
 .match-list li{
-    height: 150px;
+    height: auto;
     border-left: lightgray 1px solid;
 }
 .match-stats{
@@ -94,6 +94,11 @@ body p, li, h4 {
 .match-augments li{
     height: auto;
     font-size: smaller;
+}
+
+.match-placement {
+    width: 10%;
+    text-align: center;
 }
 
 .match-stats li{

@@ -8,15 +8,14 @@ const fs = require('fs');
 let rawChampionAssets = fs.readFileSync("./public/json/championAssets.json")
 let championAssets = JSON.parse(rawChampionAssets);
 
-console.log(championAssets.set_7)
-
 const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 
 module.exports = {
     getSummonerProfile: async (req, res) => {
+      console.log(req.params.summonerName)
         try {
           const summoner = await Summoner.find({ summonerName: req.params.summonerName });
-          const summonerMatches = await SummonerMatch.find({summonerId: summoner[0].summonerId}).lean();
+          const summonerMatches = await SummonerMatch.find({summonerId: summoner[0].summonerId}).sort({matchId: -1}).lean();
           //Object used to calculate stats here instead of front
           let stats = {
             wins: 0,
@@ -65,6 +64,12 @@ module.exports = {
                 stats.units[unit.character_id].rank = stats.units[unit.character_id].score /stats.units[unit.character_id].games
               }
               else{
+                //TODO: Fix nomsy tracking
+                //      --Nomsy's class for the game gets added to his name
+                //      --"nomsyevoker"
+                if(unit.character_id.split('_')[1].toLowerCase().slice(0,5) === "nomsy"){
+                  unit.character_id = "set7_nomsy"
+                }
                 stats.units[unit.character_id] = {score: score, games: 1, rank: score, assetUrl: championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl}
                 if(Object.hasOwn(championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()], "name")){
                   stats.units[unit.character_id].name = championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()].name
@@ -104,8 +109,7 @@ module.exports = {
           stats.traitArray = Object.entries(stats.traits).filter(ele => ele[1].games > 4).sort((a,b) => a[1].rank - b[1].rank)
           stats.augmentArray = Object.entries(stats.augments).filter(ele => ele[1].games > 1).sort((a,b) => a[1].rank - b[1].rank)
           stats.unitArray = Object.entries(stats.units).sort()
-          console.log(summonerMatches[0].data.augments)
-
+          console.log("RENDER summonerProfile.ejs")
           res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user, assets: championAssets.set_7.champions });
         } catch (err) {
           console.log(err);
