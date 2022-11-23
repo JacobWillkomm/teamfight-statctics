@@ -20,17 +20,17 @@
 
 
 # TODO:
-#### Views:
-###### Summoner Profile Stats
+### Views:
+##### Summoner Profile Stats
 - ~~Champion Assets~~
 - Borders based on Tier
 - Star lv
 - Detailed stats for match on summonerProfile
 - Pagenation
 - Store summonerStats so we can get them without recalculating
-###### Match View
-###### Global Stats View
-#### Flow:
-###### Fix login landing page
-###### Queue to handle requests to Riot
-###### Loop through the players in a match and add each one
+##### Match View
+##### Global Stats View
+### Flow:
+##### Fix login landing page
+##### Queue to handle requests to Riot
+##### Loop through the players in a match and add each one
