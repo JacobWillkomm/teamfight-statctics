@@ -154,5 +154,15 @@ module.exports = {
       } catch (err) {
         console.log(err);
       }
+    },
+    search: async (req, res) => {
+      try {
+        //Check for summoner in local DB
+        //Ask Riot for Summoner
+        //--Import games
+        //Else return summoner Not Found
+      } catch (err){
+        console.log(err);
+      }
     }
 }
