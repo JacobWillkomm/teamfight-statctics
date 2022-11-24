@@ -16,7 +16,7 @@ module.exports = {
         try {
           const summoner = await Summoner.find({ summonerName: req.params.summonerName });
           const summonerMatches = await SummonerMatch.find({summonerId: summoner[0].summonerId}).sort({matchId: -1}).lean();
-          //Object used to calculate stats here instead of front
+          //Object used to calculate stats here instead of frontend
           let stats = {
             wins: 0,
             winsRanked: 0,
@@ -112,6 +112,8 @@ module.exports = {
           console.log("RENDER summonerProfile.ejs")
           res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user, assets: championAssets.set_7.champions });
         } catch (err) {
+          console.log("Summoner not Found")
+          res.render("summonerNotFound.ejs")
           console.log(err);
         }
       },
@@ -155,14 +157,20 @@ module.exports = {
         console.log(err);
       }
     },
-    search: async (req, res) => {
+    getSearch: async (req, res) => {
       try {
-        //Check for summoner in local DB
-        //Ask Riot for Summoner
-        //--Import games
-        //Else return summoner Not Found
+        console.log("REQ: ",req.body)
+        res.render("search.ejs");
       } catch (err){
         console.log(err);
+      }
+    },
+    searchSummoners: async(req, res) => {
+      try{
+        console.log("At SearchSummoners ", req.query)
+        res.redirect(req.query.summonerName.toString())
+      } catch (err){
+        console.log(err)
       }
     }
 }
