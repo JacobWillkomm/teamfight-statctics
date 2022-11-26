@@ -12,7 +12,6 @@ const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 
 module.exports = {
     getSummonerProfile: async (req, res) => {
-      console.log(req.params.summonerName)
         try {
           const summoner = await Summoner.find({ summonerName: req.params.summonerName });
           const summonerMatches = await SummonerMatch.find({summonerId: summoner[0].summonerId}).sort({matchId: -1}).lean();
