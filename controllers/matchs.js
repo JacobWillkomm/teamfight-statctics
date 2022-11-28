@@ -3,14 +3,23 @@ const Match = require("../models/Match");
 const Summoner = require('../models/Summoner');
 const SummonerMatch = require("../models/SummonerMatch");
 require("dotenv").config({ path: "./config/.env" });
+const fs = require('fs');
+let rawChampionAssets = fs.readFileSync("./public/json/championAssets.json")
+let championAssets = JSON.parse(rawChampionAssets);
 
 const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 
 module.exports = {
     getMatch: async (req, res) => {
+      console.log("GET MATCH")
         try {
-          const match = await Match.findById({ user: req.params.id });
-          res.render("TODO", { match: match, user: req.user });
+          const match = await Match.findOne({ matchId: "NA1_"+req.params.id });
+          console.log(match.info.participants)
+          for(let i = 0; i < match.info.participants.length; i++){
+            console.log(match.info.participants[i])
+          }
+          match.info.participants = Object.entries(match.info.participants).sort((a,b) => a[1].placement - b[1].placement)
+          res.render("match.ejs", { match: match, user: req.user, assets: championAssets });
         } catch (err) {
           console.log(err);
         }

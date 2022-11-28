@@ -109,10 +109,9 @@
 
             </ul>
           </li>
-            <a href="/summoner/<%= summonerMatches[i].matchId%>">
+            <a href="/match/<%= summonerMatches[i].matchId.split('_')[1]%>">
               <%= summonerMatches[i].matchId%>
             </a>
-
           </li>
           <% } %>
         </ul>

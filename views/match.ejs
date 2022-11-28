@@ -1,0 +1,52 @@
+<%- include('partials/header') -%>
+<div class="container">
+    <div class="col-12">
+      <h1>Match</h1>
+      <ul class="row list-unstyled match-list">
+        <% for(var i=0; i<match.metadata.participants.length; i++) {%>
+        <li>
+          <ul class="match-stats">
+            <li class="unit-list">
+              <span>Team</span>
+              <ul>
+                <% for(var j=0; j<match.info.participants[i].units.length; j++) {%>
+                  <li>
+                    <img src="<%= assets[match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>"> 
+                    <%= assets[match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase()].name %>
+                  </li>
+                <% } %>
+              </ul>
+            </li>
+            <li class="match-trait-list">
+              <span>Traits</span>
+              <ul>
+                <% for(var j=0; j<match.info.participants[i].traits.length; j++) {%>
+                  <% if(match.info.participants[i].traits[j].tier_current > 0) { %>
+                  <li>
+                    <%= match.info.participants[i].traits[j].name.split('_')[1] %>
+                  </li>
+                  <% } %>
+                <% } %>
+              </ul>
+            </li>
+            <li class="match-augments">
+              <span>Augments</span>
+              <ul>
+                <% for(var j=0; j<match.info.participants[i].augments.length; j++) { %>
+                  <li>
+                    <%= match.info.participants[i].augments[j].split('_')[2] %>
+                  </li>
+                <% } %>
+              </ul>
+            </li>
+            <li class="match-placement">
+              <span>Rank</span>
+              <h2><%= match.data.placement %></h2>
+            </li>
+
+          </ul>
+        <% } %>
+      </ul> 
+  </div>
+</div>
+<%- include('partials/footer') -%>

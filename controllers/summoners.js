@@ -34,7 +34,7 @@ module.exports = {
           //      Placement represents the place the player got, 1 first, 8 last
           //      So a lower ratio between # games & total score is better but data quality is limited by the # of games
           //TODO: This could be saved as its own model (SummonerName as FK), so that the server doesn't have to recalculate.
-          //      This woud require a list of games that have been added to the stats
+          //      This woud require a list of games that have been added to the stats but we should be able to just use SummonerMatch
           summonerMatches.map((ele) => {
             let score = ele.data.placement
             //Ranked queue : 1100
@@ -63,7 +63,7 @@ module.exports = {
                 stats.units[unit.character_id].rank = stats.units[unit.character_id].score /stats.units[unit.character_id].games
               }
               else{
-                //TODO: Fix nomsy tracking
+                //TODO: Better fix for nomsy tracking
                 //      --Nomsy's class for the game gets added to his name
                 //      --"nomsyevoker"
                 if(unit.character_id.split('_')[1].toLowerCase().slice(0,5) === "nomsy"){
