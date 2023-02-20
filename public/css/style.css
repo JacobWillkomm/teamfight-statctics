@@ -104,6 +104,14 @@ body p, li, h4 {
 .match-stats li{
     border: white 0 solid;
 }
+
+.participant-list li{
+    width: 50%;
+}
+.match-particpant {
+    width: 50%;
+}
+
 .title {
     font-family: 'Roboto Slab', serif;
 }

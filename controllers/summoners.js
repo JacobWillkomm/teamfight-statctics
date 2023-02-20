@@ -67,7 +67,7 @@ module.exports = {
                 //      --Nomsy's class for the game gets added to his name
                 //      --"nomsyevoker"
                 if(unit.character_id.split('_')[1].toLowerCase().slice(0,5) === "nomsy"){
-                  unit.character_id = "set7_nomsy"
+                  unit.character_id = "TFT7_nomsy"
                 }
                 stats.units[unit.character_id] = {score: score, games: 1, rank: score, assetUrl: championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl}
                 if(Object.hasOwn(championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()], "name")){

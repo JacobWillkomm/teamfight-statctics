@@ -6,6 +6,7 @@ require("dotenv").config({ path: "./config/.env" });
 const fs = require('fs');
 let rawChampionAssets = fs.readFileSync("./public/json/championAssets.json")
 let championAssets = JSON.parse(rawChampionAssets);
+console.log(championAssets)
 
 const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 
@@ -16,10 +17,21 @@ module.exports = {
           const match = await Match.findOne({ matchId: "NA1_"+req.params.id });
           console.log(match.info.participants)
           for(let i = 0; i < match.info.participants.length; i++){
-            console.log(match.info.participants[i])
+            console.log("HERE", match.info.participants[i])
+            
+            //TODO: Better fix for nomsy tracking
+            //      --Nomsy's class for the game gets added to his name
+            //      --"nomsyevoker"
+            for(let j = 0; j < match.info.participants[i].units.length; j++){
+              if(match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase().slice(0,5) === "nomsy"){
+                match.info.participants[i].units[j].character_id = "TFT7_nomsy"
+              }
+            }
+            //match.info.participants[i].units = Object.entries(match.info.participants[i].units)
           }
-          match.info.participants = Object.entries(match.info.participants).sort((a,b) => a[1].placement - b[1].placement)
-          res.render("match.ejs", { match: match, user: req.user, assets: championAssets });
+          //match.info.participants = Object.entries(match.info.participants).sort((a,b) => a[1].placement - b[1].placement)
+          match.info.participants.sort((a,b) => a.placement - b.placement)
+          res.render("match.ejs", { match: match, user: req.user, assets: championAssets.set_7.champions });
         } catch (err) {
           console.log(err);
         }

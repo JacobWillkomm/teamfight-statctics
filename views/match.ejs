@@ -2,14 +2,15 @@
 <div class="container">
     <div class="col-12">
       <h1>Match</h1>
-      <ul class="row list-unstyled match-list">
+      <ul class="row list-unstyled">
         <% for(var i=0; i<match.metadata.participants.length; i++) {%>
-        <li>
+        <li class="match-particpant">
           <ul class="match-stats">
             <li class="unit-list">
               <span>Team</span>
-              <ul>
+              <ul>     
                 <% for(var j=0; j<match.info.participants[i].units.length; j++) {%>
+                  <% console.log(match.info.participants[i].units[j].character_id) %>
                   <li>
                     <img src="<%= assets[match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>"> 
                     <%= assets[match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase()].name %>
@@ -41,7 +42,7 @@
             </li>
             <li class="match-placement">
               <span>Rank</span>
-              <h2><%= match.data.placement %></h2>
+              <h2><%= match.info.participants[i].placement %></h2>
             </li>
 
           </ul>

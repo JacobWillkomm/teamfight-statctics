@@ -302,5 +302,257 @@
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_zyra_mobile.tft_set7_stage2.png"
             }
         }
+    },
+    "set_8" : {
+        "champions" : {
+            "alistar" : {
+                "name" : "Alistar",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_alistar_square.tft_set8.png"
+            },
+            "annie" : {
+                "name" : "Annie",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_annie_square.tft_set8.png"
+            },
+            "ashe" : {
+                "name" : "Ashe",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_ashe_square.tft_set8.png"
+            },
+            "aurelionsol" : {
+                "name" : "Aurelion Sol",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_aurelionsol_square.tft_set8.png"
+            },
+            "belveth" : {
+                "name" : "Belveth",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_belveth_square.tft_set8.png"
+            },
+            "blitzcrank" : {
+                "name" : "Blitzcrank",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_blitzcrank_square.tft_set8.png"
+            },
+            "camille" : {
+                "name" : "Camille",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_camille_square.tft_set8.png"
+            },
+            "chogath" : {
+                "name" : "Cho'Gath",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_blitzcrank_square.tft_set8.png"
+            },
+            "draven" : {
+                "name" : "Draven",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_draven_square.tft_set8.png"
+            },
+            "ekko" : {
+                "name" : "Ekko",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_ekko_square.tft_set8.png"
+            },
+            "ezreal" : {
+                "name" : "Ezreal",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_ezreal_square.tft_set8.png"
+            },
+            "fiddlesticks" : {
+                "name" : "Fiddlesticks",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_fiddlesticks_square.tft_set8.png"
+            },
+            "fiora" : {
+                "name" : "Fiora",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_fiora_square.tft_set8.png"
+            },
+            "galio" : {
+                "name" : "Galio",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_galio_square.tft_set8.png"
+            },
+            "gangplank" : {
+                "name" : "Gangplank",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_gangplank_square.tft_set8.png"
+            },
+            "hecarim" : {
+                "name" : "Hecarim",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_hecarim_square.tft_set8.png"
+            },
+            "janna" : {
+                "name" : "Janna",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_janna_square.tft_set8.png"
+            },
+            "jax" : {
+                "name" : "Jax",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_jax_square.tft_set8.png"
+            },
+            "jinx" : {
+                "name" : "jinx",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_jinx_square.tft_set8.png"
+            },
+            "kaisa" : {
+                "name" : "Kai'Sa",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_kaisa_square.tft_set8.png"
+            },
+            "kayle" : {
+                "name" : "Kayle",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_kayle_square.tft_set8.png"
+            },
+            "leblanc" : {
+                "name" : "LeBlanc",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_leblanc_square.tft_set8.png"
+            },
+            "leesin" : {
+                "name" : "Lee Sin",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_leesin_square.tft_set8.png"
+            },
+            "leona" : {
+                "name" : "Leona",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_lenoa_square.tft_set8.png"
+            },
+            "lulu" : {
+                "name" : "Lulu",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_lulu_square.tft_set8.png"
+            },
+            "lux" : {
+                "name" : "Lux",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_lux_square.tft_set8.png"
+            },
+            "malphite" : {
+                "name" : "Malphite",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_malphite_square.tft_set8.png"
+            },
+            "missfortune" : {
+                "name" : "Miss Fortune",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_missfortune_square.tft_set8.png"
+            },
+            "mordekaiser" : {
+                "name" : "Mordekaiser",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_mordekaiser_square.tft_set8.png"
+            },
+            "nasus" : {
+                "name" : "Nasus",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_nasus_square.tft_set8.png"
+            },
+            "nilah" : {
+                "name" : "Nilah",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_nilah_square.tft_set8.png"
+            },
+            "nunu" : {
+                "name" : "Nunu",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_nunu_square.tft_set8.png"
+            },
+            "nunusnowball" : {
+                "name" : "Nunu Snowball",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_nunusnowball_square.tft_set8.png"
+            },
+            "poppy" : {
+                "name" : "Poppy",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_poppy_square.tft_set8.png"
+            },
+            "pranksterdummy" : {
+                "name" : "Dummy",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_pranksterdummy_square.tft_set8.png"
+            },
+            "rammus" : {
+                "name" : "Rammus",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_rammus_square.tft_set8.png"
+            },
+            "rell" : {
+                "name" : "Rell",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_rell_square.tft_set8.png"
+            },
+            "renekton" : {
+                "name" : "Renekton",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_renekton_square.tft_set8.png"
+            },
+            "riven" : {
+                "name" : "Riven",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_riven_square.tft_set8.png"
+            },
+            "samira" : {
+                "name" : "Samira",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_samira_square.tft_set8.png"
+            },
+            "sejuani" : {
+                "name" : "Sejuani",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_sejuani_square.tft_set8.png"
+            },
+            "senna" : {
+                "name" : "Senna",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_senna_square.tft_set8.png"
+            },
+            "sett" : {
+                "name" : "Sett",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_sett_square.tft_set8.png"
+            },
+            "sivir" : {
+                "name" : "Sivir",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_sivir_square.tft_set8.png"
+            },
+            "sona" : {
+                "name" : "Sona",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_sona_square.tft_set8.png"
+            },
+            "soraka" : {
+                "name" : "Soraka",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_soraka_square.tft_set8.png"
+            },
+            "sylas" : {
+                "name" : "Sylas",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_sylas_square.tft_set8.png"
+            },
+            "syndra" : {
+                "name" : "Syndra",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_syndra_square.tft_set8.png"
+            },
+            "taliyah" : {
+                "name" : "Taliyah",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_taliyah_square.tft_set8.png"
+            },
+            "talon" : {
+                "name" : "Talon",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_talon_square.tft_set8.png"
+            },
+            "urgot" : {
+                "name" : "Urgot",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_urgot_square.tft_set8.png"
+            },
+            "vayne" : {
+                "name" : "Vayne",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_vayne_square.tft_set8.png"
+            },
+            "velkoz" : {
+                "name" : "Vel'Koz",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_velkoz_square.tft_set8.png"
+            },
+            "vi" : {
+                "name" : "Vi",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_vi_square.tft_set8.png"
+            },
+            "viego" : {
+                "name" : "Viego",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_viego_square.tft_set8.png"
+            },
+            "wukong" : {
+                "name" : "Wukong",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_wukong_square.tft_set8.png"
+            },
+            "yasuo" : {
+                "name" : "Yasuo",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_yasuo_square.tft_set8.png"
+            },
+            "yuumi" : {
+                "name" : "Yuumi",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_yuumi_square.tft_set8.png"
+            },
+            "zac" : {
+                "name" : "Zac",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_zac_square.tft_set8.png"
+            },
+            "zed" : {
+                "name" : "Zed",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_zed_square.tft_set8.png"
+            },
+            "zedshadow" : {
+                "name" : "Zed's Shadow",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_zedshadow_square.tft_set8.png"
+            },
+            "zoe" : {
+                "name" : "Zoe",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_zoe_square.tft_set8.png"
+            }
+        }
     }
 }
