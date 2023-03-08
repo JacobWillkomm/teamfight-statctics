@@ -13,6 +13,10 @@ const SummonerMatchSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    setNumber: {
+        type: Number,
+        required: true
+    },
     data: {
         augments: [String],
         companion: {

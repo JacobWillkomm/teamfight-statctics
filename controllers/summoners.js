@@ -36,6 +36,7 @@ module.exports = {
           //TODO: This could be saved as its own model (SummonerName as FK), so that the server doesn't have to recalculate.
           //      This woud require a list of games that have been added to the stats but we should be able to just use SummonerMatch
           summonerMatches.map((ele) => {
+            console.log(ele)
             let score = ele.data.placement
             //Ranked queue : 1100
             if(ele.data.queueId === '1100') {
@@ -70,6 +71,8 @@ module.exports = {
                   unit.character_id = "TFT7_nomsy"
                 }
                 stats.units[unit.character_id] = {score: score, games: 1, rank: score, assetUrl: championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl}
+                
+                //TODO Set 8 assets
                 if(Object.hasOwn(championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()], "name")){
                   stats.units[unit.character_id].name = championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()].name
                 }else{
