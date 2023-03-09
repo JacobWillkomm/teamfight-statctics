@@ -70,11 +70,12 @@ module.exports = {
                 if(unit.character_id.split('_')[1].toLowerCase().slice(0,5) === "nomsy"){
                   unit.character_id = "TFT7_nomsy"
                 }
-                stats.units[unit.character_id] = {score: score, games: 1, rank: score, assetUrl: championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl}
+                console.log("set_"+ele.setNumber, unit.character_id.split('_')[1].toLowerCase())
+                stats.units[unit.character_id] = {score: score, games: 1, rank: score, assetUrl: championAssets["set_"+ele.setNumber].champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl}
                 
                 //TODO Set 8 assets
-                if(Object.hasOwn(championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()], "name")){
-                  stats.units[unit.character_id].name = championAssets.set_7.champions[unit.character_id.split('_')[1].toLowerCase()].name
+                if(Object.hasOwn(championAssets["set_"+ele.setNumber].champions[unit.character_id.split('_')[1].toLowerCase()], "name")){
+                  stats.units[unit.character_id].name = championAssets["set_"+ele.setNumber].champions[unit.character_id.split('_')[1].toLowerCase()].name
                 }else{
                   stats.units[unit.character_id].name = unit.character_id.split('_')[1]
                 }
@@ -112,7 +113,7 @@ module.exports = {
           stats.augmentArray = Object.entries(stats.augments).filter(ele => ele[1].games > 1).sort((a,b) => a[1].rank - b[1].rank)
           stats.unitArray = Object.entries(stats.units).sort()
           console.log("RENDER summonerProfile.ejs")
-          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user, assets: championAssets.set_7.champions });
+          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user, assets: championAssets });
         } catch (err) {
           console.log("Summoner not Found")
           res.render("summonerNotFound.ejs")

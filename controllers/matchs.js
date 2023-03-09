@@ -106,7 +106,9 @@ module.exports = {
             await delay(500)
             const matchRequest = await TftApi.Match.get(matchlist[i], Api.Constants.RegionGroups.AMERICAS)
             //if we are in an older set, break
-            if(matchRequest.response.info.tft_set_core_name !== "TFTSet7_2"){
+            if(matchRequest.response.info.tft_set_core_name !== "TFTSet7_2" && matchRequest.response.info.tft_set_core_name !== "TFTSet8"){
+              console.log("break")
+              console.log(matchRequest.response.info.tft_set_core_name)
               break;
             }
             //create db entry

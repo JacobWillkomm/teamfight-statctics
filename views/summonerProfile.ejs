@@ -33,9 +33,15 @@
               <h4>Top Traits</h4>
               <% if(stats.traitArray.length > 2) { %>
               <ul class="top-traits">
+                <li><img src="../imgs/traits/bard.png"><%= stats.traitArray[0][0].split('_')[1] %></li>
+                <li><img src="../imgs/traits/evoker.png"><%= stats.traitArray[1][0].split('_')[1] %></li>
+                <li><img src="../imgs/traits/bard.png"><%= stats.traitArray[2][0].split('_')[1] %></li>
+                
+                <!-- TODO: Fix dynamic trait assets
                 <li><img src="../imgs/traits/<%=stats.traitArray[0][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[0][0].split('_')[1] %></li>
                 <li><img src="../imgs/traits/<%=stats.traitArray[1][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[1][0].split('_')[1] %></li>
                 <li><img src="../imgs/traits/<%=stats.traitArray[2][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[2][0].split('_')[1] %></li>
+                -->
               </ul>
               <% } else { %>
                 <span>Please import matches</span>
@@ -74,8 +80,9 @@
                 <ul>
                   <% for(var j=0; j<summonerMatches[i].data.units.length; j++) {%>
                     <li>
-                        <img src="<%= assets[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>">
-                        <%= assets[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].name %>
+                        <% let set = "set_" + summonerMatches[i].setNumber %>
+                        <img src="<%= assets[set].champions[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>">
+                        <%= assets[set].champions[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].name %>
                     </li>
                   <% } %>
                 </ul>

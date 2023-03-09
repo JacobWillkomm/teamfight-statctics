@@ -313,6 +313,10 @@
                 "name" : "Annie",
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_annie_square.tft_set8.png"
             },
+            "aphelios" : {
+                "name" : "Aphelios",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_aphelios_square.tft_set8.png"
+            },
             "ashe" : {
                 "name" : "Ashe",
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_ashe_square.tft_set8.png"
@@ -399,7 +403,7 @@
             },
             "leona" : {
                 "name" : "Leona",
-                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_lenoa_square.tft_set8.png"
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_leona_square.tft_set8.png"
             },
             "lulu" : {
                 "name" : "Lulu",
