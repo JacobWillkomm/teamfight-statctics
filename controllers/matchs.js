@@ -31,7 +31,7 @@ module.exports = {
           }
           //match.info.participants = Object.entries(match.info.participants).sort((a,b) => a[1].placement - b[1].placement)
           match.info.participants.sort((a,b) => a.placement - b.placement)
-          res.render("match.ejs", { match: match, user: req.user, assets: championAssets.set_7.champions });
+          res.render("match.ejs", { match: match, user: req.user, assets: championAssets });
         } catch (err) {
           console.log(err);
         }

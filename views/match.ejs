@@ -10,10 +10,11 @@
               <span>Team</span>
               <ul>     
                 <% for(var j=0; j<match.info.participants[i].units.length; j++) {%>
-                  <% console.log(match.info.participants[i].units[j].character_id) %>
+                  <!-- <% console.log(match.info.participants[i].units[j].character_id) %> -->
                   <li>
-                    <img src="<%= assets[match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>"> 
-                    <%= assets[match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase()].name %>
+                    <% let set = "set_" + match.info.tftSetNumber %>
+                    <img src="<%= assets[set].champions[match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>"> 
+                    <%= assets[set].champions[match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase()].name %>
                   </li>
                 <% } %>
               </ul>
