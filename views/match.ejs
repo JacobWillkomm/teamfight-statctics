@@ -6,15 +6,20 @@
         <% for(var i=0; i<match.metadata.participants.length; i++) {%>
         <li class="match-particpant">
           <ul class="match-stats">
+            <li class="match-placement">
+              <span>Rank</span>
+              <h2><%= match.info.participants[i].placement %></h2>
+            </li>
+            
             <li class="unit-list">
               <span>Team</span>
               <ul>     
                 <% for(var j=0; j<match.info.participants[i].units.length; j++) {%>
-                  <!-- <% console.log(match.info.participants[i].units[j].character_id) %> -->
+                  <% console.log(match.info.participants[i].units[j]) %>
                   <li>
                     <% let set = "set_" + match.info.tftSetNumber %>
                     <img src="<%= assets[set].champions[match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>"> 
-                    <%= assets[set].champions[match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase()].name %>
+                    <p class="<%= (j >= 5) ? "unit-name-top" : "unit-name-bottom" %>"><%= assets[set].champions[match.info.participants[i].units[j].character_id.split('_')[1].toLowerCase()].name %></p>
                   </li>
                 <% } %>
               </ul>
@@ -40,10 +45,6 @@
                   </li>
                 <% } %>
               </ul>
-            </li>
-            <li class="match-placement">
-              <span>Rank</span>
-              <h2><%= match.info.participants[i].placement %></h2>
             </li>
 
           </ul>
