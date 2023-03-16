@@ -54,7 +54,7 @@ body p, li, h4 {
     padding: 0;
 }
 .unit-list{
-    width: 50%;
+    width: 55%;
 }
 .unit-list ul{
     display:flex;
@@ -66,19 +66,24 @@ body p, li, h4 {
     width: 20%;
     border: white 0 solid;
     list-style: none;
-    padding: 12px 2px;
+    padding: .5% .25% 5% 0;
     position: relative;
 }
 .unit-list img{
-    height: 50px;
+    width: 95%;
+}
+
+.summonerMatch img{
+    width: 90%;
+    height: auto;
 }
 
 .unit-list .unit-name-top{
     visibility: hidden;
 
     position: absolute;
-    width: 100%;
-    bottom: 65%;
+    padding: 0 .5%;
+    bottom: 82%;
     left: 10%;
     z-index: 1;
 }
@@ -91,7 +96,7 @@ body p, li, h4 {
     visibility: hidden;
 
     position: absolute;
-    width: 100%;
+    padding: 0 .5%;
     top: 80%;
     left: 10%;
     z-index: 1;
@@ -102,6 +107,7 @@ body p, li, h4 {
 
 .match-trait-list {
     width: 20%;
+    padding-left: 1%;
 }
 .match-trait-list ul{
     list-style: none;
@@ -113,7 +119,7 @@ body p, li, h4 {
 }
 
 .match-augments {
-    width: 20%;
+    width: 15%;
 }
 .match-augments ul {
     padding: 0;

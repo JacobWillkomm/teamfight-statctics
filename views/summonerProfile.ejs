@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row mt-5">
     <div class="row">
-      <div class="col-4">
+      <div class="col-3">
           <div class="mt-5">
             <h2 class="main-color"><%= summoner[0].summonerName %></h2>
             <form action="/summoner/<%= summoner[0].summonerName %>/importMatches" enctype="multipart/form-data" method="POST">
@@ -10,7 +10,7 @@
             </form>
           </div>
       </div>
-      <div class ="col-8">
+      <div class ="col-9">
         <div class="mt-5 profile-stats">
           <ul>
             <li>
@@ -67,22 +67,26 @@
       </div>
 
     <div class="row">
-      <div class="col-4">
+      <div class="col-3">
 
       </div>
-      <div class="col-8">
+      <div class="col-9">
         <ul class="row list-unstyled match-list">
           <% for(var i=0; i<summonerMatches.length; i++) {%>
           <li>
             <ul class="match-stats">
-              <li class="unit-list">
+              <li class="match-placement">
+                <span>Rank</span>
+                <h2><%= summonerMatches[i].data.placement %></h2>
+              </li>
+              <li class="summonerMatch unit-list">
                 <span>Team</span>
                 <ul>
                   <% for(var j=0; j<summonerMatches[i].data.units.length; j++) {%>
                     <li>
                         <% let set = "set_" + summonerMatches[i].setNumber %>
                         <img src="<%= assets[set].champions[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>">
-                        <%= assets[set].champions[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].name %>
+                        <p class="<%= (j >= 5) ? "unit-name-top" : "unit-name-bottom" %>"><%= assets[set].champions[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].name %></p>
                     </li>
                   <% } %>
                 </ul>
@@ -90,10 +94,11 @@
               <li class="match-trait-list">
                 <span>Traits</span>
                 <ul>
-                  <% for(var j=0; j<summonerMatches[i].data.traits.length; j++) {%>
-                    <% if(summonerMatches[i].data.traits[j].tier_current > 0) { %>
+                  <% let matchTraits = summonerMatches[i].data.traits.sort((a,b) => b.tier_current - a.tier_current) %>
+                  <% for(var j=0; j<matchTraits.length; j++) {%>
+                    <% if(matchTraits[j].tier_current > 0) { %>
                     <li>
-                      <%= summonerMatches[i].data.traits[j].name.split('_')[1] %>
+                      <%= matchTraits[j].name.split('_')[1] %> (<%=matchTraits[j].tier_current %>/<%= matchTraits[j].tier_total %>)
                     </li>
                     <% } %>
                   <% } %>
@@ -108,10 +113,6 @@
                     </li>
                   <% } %>
                 </ul>
-              </li>
-              <li class="match-placement">
-                <span>Rank</span>
-                <h2><%= summonerMatches[i].data.placement %></h2>
               </li>
 
             </ul>
