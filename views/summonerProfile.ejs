@@ -88,7 +88,12 @@
                     <li class="unit-container <%= "rarity-"+sortedUnits[j].rarity %>">
                         <%- "&#9733;".repeat(sortedUnits[j].tier) %>
                         <% let set = "set_" + summonerMatches[i].setNumber %>
-                        <img src="<%= assets[set].champions[sortedUnits[j].character_id.split('_')[1].toLowerCase()].assetUrl %>">
+                        <img class="unit-asset" src="<%= assets[set].champions[sortedUnits[j].character_id.split('_')[1].toLowerCase()].assetUrl %>">
+                        <div class="item-box-container">
+                          <img class="item-box" src="https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/archangel_staff.png">
+                          <div class="item-box"></div>
+                          <div class="item-box"></div>
+                        </div>
                         <p class="<%= (j >= 5) ? "unit-name-top" : "unit-name-bottom" %>"><%= assets[set].champions[sortedUnits[j].character_id.split('_')[1].toLowerCase()].name %></p>
                     </li>
                   <% } %>
