@@ -82,11 +82,14 @@
               <li class="summonerMatch unit-list">
                 <span>Team</span>
                 <ul>
-                  <% for(var j=0; j<summonerMatches[i].data.units.length; j++) {%>
-                    <li>
+                  <% let sortedUnits = summonerMatches[i].data.units.sort((a,b) => a.rarity.toString().localeCompare(b.rarity.toString()) || a.tier - b.tier) %>
+                  <% for(var j=0; j<sortedUnits.length; j++) {%>
+                    <% if(sortedUnits[j].rarity === 5) {console.log(sortedUnits[j])} %>
+                    <li class="unit-container <%= "rarity-"+sortedUnits[j].rarity %>">
+                        <%- "&#9733;".repeat(sortedUnits[j].tier) %>
                         <% let set = "set_" + summonerMatches[i].setNumber %>
-                        <img src="<%= assets[set].champions[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].assetUrl %>">
-                        <p class="<%= (j >= 5) ? "unit-name-top" : "unit-name-bottom" %>"><%= assets[set].champions[summonerMatches[i].data.units[j].character_id.split('_')[1].toLowerCase()].name %></p>
+                        <img src="<%= assets[set].champions[sortedUnits[j].character_id.split('_')[1].toLowerCase()].assetUrl %>">
+                        <p class="<%= (j >= 5) ? "unit-name-top" : "unit-name-bottom" %>"><%= assets[set].champions[sortedUnits[j].character_id.split('_')[1].toLowerCase()].name %></p>
                     </li>
                   <% } %>
                 </ul>

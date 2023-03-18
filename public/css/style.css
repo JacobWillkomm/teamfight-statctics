@@ -61,15 +61,20 @@ body p, li, h4 {
     flex-wrap: wrap;
     padding: 0;
 }
-.unit-list li{
+.unit-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
     height: auto;
     width: 20%;
-    border: white 0 solid;
+    border: white 2px solid;
     list-style: none;
     padding: .5% .25% 5% 0;
     position: relative;
 }
-.unit-list img{
+.unit-container img{
     width: 95%;
 }
 
@@ -78,13 +83,12 @@ body p, li, h4 {
     height: auto;
 }
 
-.unit-list .unit-name-top{
+.unit-container .unit-name-top{
     visibility: hidden;
 
     position: absolute;
     padding: 0 .5%;
     bottom: 82%;
-    left: 10%;
     z-index: 1;
 }
 
@@ -94,15 +98,78 @@ body p, li, h4 {
 
 .unit-list .unit-name-bottom{
     visibility: hidden;
-
     position: absolute;
+
     padding: 0 .5%;
     top: 80%;
-    left: 10%;
     z-index: 1;
 }
 .unit-list li:hover .unit-name-bottom{
     visibility: visible;
+}
+
+.unit-list .rarity-0{
+    color: grey
+}
+.unit-list .rarity-0 img{
+    border: grey 2px solid;
+    border-radius: 10%;
+}
+
+.unit-list .rarity-1{
+    color: green
+}
+.unit-list .rarity-1 img{
+    border: green 2px solid;
+    border-radius: 10%;
+}
+
+.unit-list .rarity-2{
+    color: blue
+}
+.unit-list .rarity-2 img{
+    border:  blue 2px solid;
+    border-radius: 10%;
+}
+
+.unit-list .rarity-3{
+    color: blue
+}
+.unit-list .rarity-3 img{
+    border:  blue 2px solid;
+    border-radius: 10%;
+}
+
+.unit-list .rarity-4{
+    color: purple
+}
+.unit-list .rarity-4 img{
+    border:  purple 2px solid;
+    border-radius: 10%;
+}
+
+.unit-list .rarity-5{
+    color: orange
+}
+.unit-list .rarity-5 img{
+    border:  orange 2px solid;
+    border-radius: 10%;
+}
+
+.unit-list .rarity-6{
+    color: orange
+}
+.unit-list .rarity-6 img{
+    border:  orange 2px solid;
+    border-radius: 10%;
+}
+
+.unit-list .rarity-7{
+    color: red
+}
+.unit-list .rarity-7 img{
+    border:  red 2px solid;
+    border-radius: 10%;
 }
 
 .match-trait-list {
@@ -133,10 +200,6 @@ body p, li, h4 {
 .match-placement {
     width: 10%;
     text-align: center;
-}
-
-.match-stats li{
-    border: white 0 solid;
 }
 
 .participant-list li{
