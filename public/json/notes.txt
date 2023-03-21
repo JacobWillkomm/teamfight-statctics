@@ -1,2 +1,5 @@
 #TFT Trait assets:
 https://raw.communitydragon.org/latest/game/assets/ux/traiticons/
+
+#TFT Standard Item assets:
+https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/

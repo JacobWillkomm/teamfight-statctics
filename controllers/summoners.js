@@ -7,6 +7,8 @@ require("dotenv").config({ path: "./config/.env" });
 const fs = require('fs');
 let rawChampionAssets = fs.readFileSync("./public/json/championAssets.json")
 let championAssets = JSON.parse(rawChampionAssets);
+let rawItemAssets = fs.readFileSync("./public/json/itemAssets.json")
+let itemAssets = JSON.parse(rawItemAssets)
 
 const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 
@@ -113,7 +115,7 @@ module.exports = {
           stats.augmentArray = Object.entries(stats.augments).filter(ele => ele[1].games > 1).sort((a,b) => a[1].rank - b[1].rank)
           stats.unitArray = Object.entries(stats.units).sort()
           console.log("RENDER summonerProfile.ejs")
-          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user, assets: championAssets });
+          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user, assets: championAssets, itemAssets: itemAssets });
         } catch (err) {
           console.log("Summoner not Found")
           res.render("summonerNotFound.ejs")

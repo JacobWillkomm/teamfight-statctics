@@ -84,15 +84,23 @@
                 <ul>
                   <% let sortedUnits = summonerMatches[i].data.units.sort((a,b) => a.rarity.toString().localeCompare(b.rarity.toString()) || a.tier - b.tier) %>
                   <% for(var j=0; j<sortedUnits.length; j++) {%>
-                    <% if(sortedUnits[j].rarity === 5) {console.log(sortedUnits[j])} %>
+                    <% if(sortedUnits[j].items.length > 0) {console.log(sortedUnits[j].character_id, sortedUnits[j].itemNames)} %>
                     <li class="unit-container <%= "rarity-"+sortedUnits[j].rarity %>">
                         <%- "&#9733;".repeat(sortedUnits[j].tier) %>
                         <% let set = "set_" + summonerMatches[i].setNumber %>
                         <img class="unit-asset" src="<%= assets[set].champions[sortedUnits[j].character_id.split('_')[1].toLowerCase()].assetUrl %>">
                         <div class="item-box-container">
-                          <img class="item-box" src="https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/archangel_staff.png">
-                          <div class="item-box"></div>
-                          <div class="item-box"></div>
+                          <% let unitItems = sortedUnits[j].itemNames %>
+                          <% let itemAsset = itemAssets.TFT.transparent.assetUrl %>
+                          <% (unitItems.length > 0 && unitItems[0].split('_')[0] === "TFT") ? itemAsset = itemAssets[unitItems[0].split('_')[0]][unitItems[0].split('_')[2]].assetUrl : itemAsset = itemAssets.TFT.transparent.assetUrl %>
+                          <% console.log(" 0th: ", itemAsset) %>
+                          <img class="item-box" src=<%= itemAsset %>>
+                          <% (unitItems.length > 1 && unitItems[1].split('_')[0] === "TFT") ? itemAsset = itemAssets[unitItems[1].split('_')[0]][unitItems[1].split('_')[2]].assetUrl : itemAsset = itemAssets.TFT.transparent.assetUrl %>
+                          <% console.log(" 1st: ", itemAsset) %>
+                          <img class="item-box" src=<%= itemAsset %>>
+                          <% (unitItems.length > 2 && unitItems[2].split('_')[0] === "TFT") ? itemAsset = itemAssets[unitItems[2].split('_')[0]][unitItems[2].split('_')[2]].assetUrl : itemAsset = itemAssets.TFT.transparent.assetUrl %>
+                          <% console.log(" 2nd: ", itemAsset) %>
+                          <img class="item-box" src=<%= itemAsset %>>
                         </div>
                         <p class="<%= (j >= 5) ? "unit-name-top" : "unit-name-bottom" %>"><%= assets[set].champions[sortedUnits[j].character_id.split('_')[1].toLowerCase()].name %></p>
                     </li>
