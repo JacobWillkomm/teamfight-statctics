@@ -1,0 +1,2 @@
+#TFT Trait assets:
+https://raw.communitydragon.org/latest/game/assets/ux/traiticons/

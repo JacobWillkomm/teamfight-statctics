@@ -556,6 +556,62 @@
             "zoe" : {
                 "name" : "Zoe",
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_zoe_square.tft_set8.png"
+            },
+            "lucian" : {
+                "name" : "Lucian",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_lucian_mobile.tft_set8_stage2.png"
+            },
+            "pantheon" : {
+                "name" : "Pantheon",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_pantheon_mobile.tft_set8_stage2.png"
+            },
+            "gnar" : {
+                "name" : "Gnar",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_gnar_mobile.tft_set8_stage2.png"
+            },
+            "morgana" : {
+                "name" : "Morgana",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_morgana_mobile.tft_set8_stage2.png"
+            },
+            "shen" : {
+                "name" : "Shen",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_shen_mobile.tft_set8_stage2.png"
+            },
+            "vex" : {
+                "name" : "Vex",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_vex_mobile.tft_set8_stage2.png"
+            },
+            "aatrox" : {
+                "name" : "Aatrox",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_aatrox_mobile.tft_set8_stage2.png"
+            },
+            "garen" : {
+                "name" : "Garen",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_garen_mobile.tft_set8_stage2.png"
+            },
+            "Jhin" : {
+                "name" : "jhin",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_jhin_mobile.tft_set8_stage2.png"
+            },
+            "neeko" : {
+                "name" : "Neeko",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_neeko_mobile.tft_set8_stage2.png"
+            },
+            "twistedfate" : {
+                "name" : "Twisted Fate",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_twistedfate_mobile.tft_set8_stage2.png"
+            },
+            "ezrealfuture" : {
+                "name" : "Ezreal",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_twistedfate_mobile.tft_set8_stage2.png"
+            },
+            "pyke" : {
+                "name" : "Pyke",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_pyke_mobile.tft_set8_stage2.png"
+            },
+            "warwick" : {
+                "name" : "Warwick",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_warwick_mobile.tft_set8_stage2.png"
             }
         }
     }
