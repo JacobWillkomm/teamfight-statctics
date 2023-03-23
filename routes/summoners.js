@@ -13,4 +13,6 @@ router.post("/:summonerName/importMatches", ensureAuth, matchController.importMa
 
 router.post("/createSummoner", summonerController.createSummoner);
 
+router.get("/:summonerName/stats", summonerController.getStats);
+
 module.exports = router;

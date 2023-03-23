@@ -15,7 +15,9 @@ const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 module.exports = {
     getSummonerProfile: async (req, res) => {
         try {
+          //From the Database, get the summoner
           const summoner = await Summoner.find({ summonerName: req.params.summonerName });
+          //From the Database, get the summonerMatches
           const summonerMatches = await SummonerMatch.find({summonerId: summoner[0].summonerId}).sort({matchId: -1}).lean();
           //Object used to calculate stats here instead of frontend
           let stats = {
@@ -174,6 +176,90 @@ module.exports = {
       try{
         console.log("At SearchSummoners ", req.query)
         res.redirect(req.query.summonerName.toString())
+      } catch (err){
+        console.log(err)
+      }
+    },
+    getStats: async(req, res) =>{
+      try{          
+
+        /*
+        {Character_id : {wins, games, rank, 
+          {tier: {wins, games, rank}},
+          {item: {wins, games, rank}}
+        }}}
+
+        {Character_id + tier : {wins: , games:, rank:,}}
+        {Character_id : {wins: , games:, rank:,}}
+        {Item_id : {wins:, games, rank,}}
+        */
+        let headUnitStats = {}
+        let unitTierStats = {}
+        let unitStats = {}
+        let itemStats = {}
+        console.log("Get Summoner Stats", req.params)
+        //From the Database, get the summoner
+        const summoner = await Summoner.find({ summonerName: req.params.summonerName });
+        //From the Database, get the summonerMatches
+        const summonerMatches = await SummonerMatch.find({summonerId: summoner[0].summonerId}).sort({matchId: -1}).lean();
+        summonerMatches.forEach(match => {
+          console.log(match)
+          //TODO: Better tracking; this will double count units when you have 2 on same team
+          match.data.units.forEach(unit => {
+            console.log(unit, match)
+
+            //"Head" Unit tracking:
+            // Descrete Unit
+            // Unit + Tier
+            // Unit + Item
+            if(Object.hasOwn(headUnitStats, unit.character_id)){
+              //Descrete:
+              headUnitStats[unit.character_id].games++
+              headUnitStats[unit.character_id].rank += match.data.placement
+              headUnitStats[unit.character_id].wins += (match.data.placement <= 4) ? 1 : 0
+
+              //Unit + Tier tracking
+              if(Object.hasOwn(headUnitStats[unit.character_id].tier, unit.tier)){
+                headUnitStats[unit.character_id].tier[unit.tier].games++
+                headUnitStats[unit.character_id].tier[unit.tier].rank += match.data.placement
+                headUnitStats[unit.character_id].tier[unit.tier].wins += (match.data.placement <= 4) ? 1 : 0
+              }else{
+                headUnitStats[unit.character_id].tier[unit.tier] = {games: 1, rank: match.data.placement, wins: (match.data.placement <= 4) ? 1 : 0}
+              }
+            }else{
+              headUnitStats[unit.character_id] = {games: 1, rank: match.data.placement, wins: (match.data.placement <= 4) ? 1 : 0, tier: {}, items: {}}
+            }
+
+            unit.itemNames.forEach(item => {
+              //Unit + Item tracking
+              if(Object.hasOwn(headUnitStats[unit.character_id].items, item)){
+                headUnitStats[unit.character_id].items[item].games++
+                headUnitStats[unit.character_id].items[item].rank += match.data.placement
+                headUnitStats[unit.character_id].items[item].wins += (match.data.placement <= 4) ? 1 : 0
+              }else{
+                headUnitStats[unit.character_id].items[item] = {games: 1, rank: match.data.placement, wins: (match.data.placement <= 4) ? 1 : 0}
+              }
+
+              //Item tracking
+              if(Object.hasOwn(itemStats, item)){
+                itemStats[item].games++
+                itemStats[item].rank += match.data.placement
+                if(match.data.placement < 4){
+                  itemStats[item].wins++
+                }
+              }else{
+                itemStats[item] = {games: 1, rank: match.data.placement, wins: (match.data.placement <= 4) ? 1 : 0}
+              }
+
+            })
+          })
+        })
+
+        console.log(headUnitStats)
+        console.log(itemStats)
+        
+        console.log(summoner)
+        res.render("summonerStats.ejs", {unitStats: headUnitStats, itemStats: itemStats})
       } catch (err){
         console.log(err)
       }

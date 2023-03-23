@@ -1,0 +1,33 @@
+<%- include('partials/header') -%>
+
+<main class="container">
+    <div class="row">
+        <h1>Stats</h1>
+    </div>
+    <div class="row">
+        <table>
+            <tr>
+                <th>Unit</th>
+                <th>Set</th>
+                <th># games</th>
+                <th>Win Rate</th>
+                <th>Avg Rank</th>
+            </tr>
+            <% let unitKeys = Object.keys(unitStats) %>
+            <% unitKeys.forEach(unitKey => { %>
+                <% let unit = unitStats[unitKey] %>
+                <tr>
+                    <td><%= unitKey.split("_")[1] %></td>
+                    <td><%= unitKey.split("_")[0].slice(3) %></td>
+                    <td><%= unit.games %></td>
+                    <td><%= unit.wins/unit.games %></td>
+                    <td><%= unit.rank/unit.games %></td>
+                </tr>
+            <% }) %>
+
+        </table>
+    </div>
+</main>
+    
+
+<%- include('partials/footer') -%>

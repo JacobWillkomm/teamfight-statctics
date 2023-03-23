@@ -8,6 +8,10 @@ body p, li, h4 {
     color: #F3F1F4;
 }
 
+table {
+    color: #F3F1F4
+}
+
 .profile-stats ul{
     display: flex;
     padding: 0;
