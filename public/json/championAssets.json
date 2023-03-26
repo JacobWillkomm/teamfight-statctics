@@ -157,6 +157,14 @@
                 "name" : "Nomsy",
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_nomsy_mobile.tft_set7_stage2.png"
             },
+            "nomsyevoker" : {
+                "name" : "Nomsy",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_nomsy_mobile.tft_set7_stage2.png"
+            },
+            "nomsymage" : {
+                "name" : "Nomsy",
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_nomsy_mobile.tft_set7_stage2.png"
+            },
             "nunu" : {
                 "name" : "Nunu",
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft7_nunu_mobile.tft_set7.png"
@@ -589,8 +597,8 @@
                 "name" : "Garen",
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_garen_mobile.tft_set8_stage2.png"
             },
-            "Jhin" : {
-                "name" : "jhin",
+            "jhin" : {
+                "name" : "Jhin",
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_jhin_mobile.tft_set8_stage2.png"
             },
             "neeko" : {
@@ -603,7 +611,7 @@
             },
             "ezrealfuture" : {
                 "name" : "Ezreal",
-                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_twistedfate_mobile.tft_set8_stage2.png"
+                "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_ezrealfuture_mobile.tft_set8_stage2.png"
             },
             "pyke" : {
                 "name" : "Pyke",

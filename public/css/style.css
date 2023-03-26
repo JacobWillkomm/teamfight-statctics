@@ -12,6 +12,12 @@ table {
     color: #F3F1F4
 }
 
+.unit-table img{
+    width: 35px;
+    height: auto;
+    margin: .75% 2%;
+}
+
 .profile-stats ul{
     display: flex;
     padding: 0;
@@ -120,6 +126,14 @@ table {
     border-radius: 10%;
 }
 
+.table-rarity-0 img{
+    border: grey 2px solid;
+    border-radius: 10%;
+}
+.table-stars-rarity-0 {
+    color: grey;
+}
+
 .unit-list .rarity-1{
     color: green
 }
@@ -127,12 +141,26 @@ table {
     border: green 2px solid;
     border-radius: 10%;
 }
+.table-rarity-1 img{
+    border: green 2px solid;
+    border-radius: 10%;
+}
+.table-stars-rarity-1 {
+    color: green;
+}
 
 .unit-list .rarity-2{
     color: blue
 }
 .unit-list .rarity-2 .unit-asset{
     border:  blue 2px solid;
+    border-radius: 10%;
+}
+.table-stars-rarity-2 {
+    color: blue;
+}
+.table-rarity-2 img{
+    border: blue 2px solid;
     border-radius: 10%;
 }
 
@@ -143,12 +171,26 @@ table {
     border:  blue 2px solid;
     border-radius: 10%;
 }
+.table-stars-rarity-3 {
+    color: blue;
+}
+.table-rarity-3 img{
+    border: blue 2px solid;
+    border-radius: 10%;
+}
 
 .unit-list .rarity-4{
     color: purple
 }
 .unit-list .rarity-4 .unit-asset{
     border:  purple 2px solid;
+    border-radius: 10%;
+}
+.table-stars-rarity-4 {
+    color: purple;
+}
+.table-rarity-4 img{
+    border: purple 2px solid;
     border-radius: 10%;
 }
 
@@ -159,6 +201,13 @@ table {
     border:  orange 2px solid;
     border-radius: 10%;
 }
+.table-stars-rarity-5 {
+    color: orange;
+}
+.table-rarity-5 img{
+    border: orange 2px solid;
+    border-radius: 10%;
+}
 
 .unit-list .rarity-6{
     color: orange
@@ -167,12 +216,41 @@ table {
     border:  orange 2px solid;
     border-radius: 10%;
 }
+.table-stars-rarity-6 {
+    color: orange;
+}
+.table-rarity-6 img{
+    border: orange 2px solid;
+    border-radius: 10%;
+}
 
 .unit-list .rarity-7{
     color: red
 }
 .unit-list .rarity-7 .unit-asset{
     border:  red 2px solid;
+    border-radius: 10%;
+}
+.table-stars-rarity-7 {
+    color: red;
+}
+.table-rarity-7 img{
+    border: red 2px solid;
+    border-radius: 10%;
+}
+
+.unit-list .rarity-9{
+    color: red
+}
+.unit-list .rarity-9 .unit-asset{
+    border:  red 2px solid;
+    border-radius: 10%;
+}
+.table-stars-rarity-9 {
+    color: red;
+}
+.table-rarity-9 img{
+    border: red 2px solid;
     border-radius: 10%;
 }
 

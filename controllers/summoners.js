@@ -204,14 +204,13 @@ module.exports = {
         const summonerMatches = await SummonerMatch.find({summonerId: summoner[0].summonerId}).sort({matchId: -1}).lean();
         summonerMatches.forEach(match => {
           console.log(match)
-          //TODO: Better tracking; this will double count units when you have 2 on same team
           match.data.units.forEach(unit => {
             console.log(unit, match)
 
-            //"Head" Unit tracking:
-            // Descrete Unit
-            // Unit + Tier
-            // Unit + Item
+            //"Head" Unit tracking includes three types of tracking: 
+            // Descrete Unit; count the unit regardless of tier & item
+            // Unit + Tier; count the unit and it's respective tier
+            // Unit + Item; count the unit and its item; Each unit can have up to 3 items and each will be tracked separately
             if(Object.hasOwn(headUnitStats, unit.character_id)){
               //Descrete:
               headUnitStats[unit.character_id].games++
@@ -227,7 +226,8 @@ module.exports = {
                 headUnitStats[unit.character_id].tier[unit.tier] = {games: 1, rank: match.data.placement, wins: (match.data.placement <= 4) ? 1 : 0}
               }
             }else{
-              headUnitStats[unit.character_id] = {games: 1, rank: match.data.placement, wins: (match.data.placement <= 4) ? 1 : 0, tier: {}, items: {}}
+              headUnitStats[unit.character_id] = {character_id: unit.character_id, unit: unit, games: 1, rank: match.data.placement, wins: (match.data.placement <= 4) ? 1 : 0, tier: {}, items: {}}
+              headUnitStats[unit.character_id].tier[unit.tier] = {games: 1, rank: match.data.placement, wins: (match.data.placement <= 4) ? 1 : 0}
             }
 
             unit.itemNames.forEach(item => {
@@ -259,7 +259,7 @@ module.exports = {
         console.log(itemStats)
         
         console.log(summoner)
-        res.render("summonerStats.ejs", {unitStats: headUnitStats, itemStats: itemStats})
+        res.render("summonerStats.ejs", {unitStats: headUnitStats, itemStats: itemStats, championAssets: championAssets})
       } catch (err){
         console.log(err)
       }

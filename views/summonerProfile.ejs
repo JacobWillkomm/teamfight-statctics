@@ -83,12 +83,17 @@
                 <span>Team</span>
                 <ul>
                   <% let sortedUnits = summonerMatches[i].data.units.sort((a,b) => a.rarity.toString().localeCompare(b.rarity.toString()) || a.tier - b.tier) %>
+                  <% console.log("Sorted Units Length: ", sortedUnits) %>
                   <% for(var j=0; j<sortedUnits.length; j++) {%>
-                    <% if(sortedUnits[j].items.length > 0) {console.log(sortedUnits[j].character_id, sortedUnits[j].itemNames)} %>
+                    <% if(sortedUnits[j].itemNames.length > 0) {console.log(sortedUnits[j].character_id, sortedUnits[j].itemNames)} %>
                     <li class="unit-container <%= "rarity-"+sortedUnits[j].rarity %>">
+
+                        <!-- Tier (1-3) -->
                         <%- "&#9733;".repeat(sortedUnits[j].tier) %>
                         <% let set = "set_" + summonerMatches[i].setNumber %>
                         <img class="unit-asset" src="<%= assets[set].champions[sortedUnits[j].character_id.split('_')[1].toLowerCase()].assetUrl %>">
+                        
+                        <!-- Equipped Items -->
                         <div class="item-box-container">
                           <% let unitItems = sortedUnits[j].itemNames %>
                           <% let itemAsset = itemAssets.TFT.transparent.assetUrl %>

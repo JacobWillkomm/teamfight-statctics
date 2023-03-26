@@ -7,8 +7,10 @@
     <div class="row">
         <table>
             <tr>
-                <th>Unit</th>
                 <th>Set</th>
+                <th>Rarity</th>
+                <th>Unit</th>
+                <td>Common Item</td>
                 <th># games</th>
                 <th>Win Rate</th>
                 <th>Avg Rank</th>
@@ -16,13 +18,31 @@
             <% let unitKeys = Object.keys(unitStats) %>
             <% unitKeys.forEach(unitKey => { %>
                 <% let unit = unitStats[unitKey] %>
-                <tr>
-                    <td><%= unitKey.split("_")[1] %></td>
+                <% console.log("ID:", unit.character_id ) %>
+                <% let set = "set_" + unitKey.split("_")[0].slice(3,4) %>
+                <tr class="unit-table table-rarity-<%= unit.unit.rarity %>">
                     <td><%= unitKey.split("_")[0].slice(3) %></td>
+                    <td><%= unit.unit.rarity + 1 %></td>
+                    <td><img src="<%= championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl %>"><%= championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].name %></td>
+                    <td>"ITEM"</td>
                     <td><%= unit.games %></td>
-                    <td><%= unit.wins/unit.games %></td>
-                    <td><%= unit.rank/unit.games %></td>
+                    <td><%= (Math.round(unit.wins/unit.games * 10000) / 100).toFixed(2) %></td>
+                    <td><%= (Math.round(unit.rank/unit.games * 100) / 100).toFixed(2) %></td>
                 </tr>
+                <% console.log(unit) %>
+                <% let unitTiers = Object.keys(unit.tier).sort() %>
+                <% unitTiers.forEach(cur => { %>
+                    <tr style="visibility: collapse;">
+                        <td></td>
+                        <td></td>
+                        <td class="table-stars-rarity-<%= unit.unit.rarity %>"><%- "&#9733;".repeat(+cur) %></td>
+                        <td>"ITEM"</td>
+                        <td><%= unit.tier[cur].games %></td>
+                        <td><%= (Math.round(unit.tier[cur].wins / unit.tier[cur].games * 10000) / 100).toFixed(2) %></td>
+                        <td><%= (Math.round(unit.tier[cur].rank / unit.tier[cur].games *100) / 100).toFixed(2) %></td>
+                    </tr>
+
+                <% }) %>
             <% }) %>
 
         </table>
