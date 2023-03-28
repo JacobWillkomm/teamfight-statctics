@@ -5,34 +5,36 @@
         <h1>Stats</h1>
     </div>
     <div class="row">
-        <table>
+        <table id="unit-table">
             <tr>
-                <th>Set</th>
-                <th>Rarity</th>
-                <th>Unit</th>
-                <td>Common Item</td>
-                <th># games</th>
-                <th>Win Rate</th>
-                <th>Avg Rank</th>
+                <th class="unit-header">Set</th>
+                <th class="unit-header">Rarity</th>
+                <th class="unit-header">Unit</th>
+                <th class="unit-header">Common Item</td>
+                <th class="unit-header"># games</th>
+                <th class="unit-header">Win Rate</th>
+                <th class="unit-header">Avg Rank</th>
             </tr>
-            <% let unitKeys = Object.keys(unitStats) %>
-            <% unitKeys.forEach(unitKey => { %>
-                <% let unit = unitStats[unitKey] %>
-                <% console.log("ID:", unit.character_id ) %>
-                <% let set = "set_" + unitKey.split("_")[0].slice(3,4) %>
-                <tr class="unit-table table-rarity-<%= unit.unit.rarity %>">
-                    <td><%= unitKey.split("_")[0].slice(3) %></td>
-                    <td><%= unit.unit.rarity + 1 %></td>
-                    <td><img src="<%= championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl %>"><%= championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].name %></td>
-                    <td>"ITEM"</td>
-                    <td><%= unit.games %></td>
-                    <td><%= (Math.round(unit.wins/unit.games * 10000) / 100).toFixed(2) %></td>
-                    <td><%= (Math.round(unit.rank/unit.games * 100) / 100).toFixed(2) %></td>
-                </tr>
-                <% console.log(unit) %>
-                <% let unitTiers = Object.keys(unit.tier).sort() %>
-                <% unitTiers.forEach(cur => { %>
-                    <tr style="visibility: collapse;">
+
+                <% let unitKeys = Object.keys(unitStats) %>
+                <% unitKeys.forEach(unitKey => { %>
+                    <% let unit = unitStats[unitKey] %>
+                    <% console.log("ID:", unit.character_id ) %>
+                    <% let set = "set_" + unitKey.split("_")[0].slice(3,4) %>
+                    <tbody class="unit-tbody">
+                    <tr class="unit-row table-rarity-<%= unit.unit.rarity %>">
+                        <td><%= unitKey.split("_")[0].slice(3) %></td>
+                        <td><%= unit.unit.rarity + 1 %></td>
+                        <td><img src="<%= championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl %>"><%= championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].name %></td>
+                        <td>"ITEM"</td>
+                        <td><%= unit.games %></td>
+                        <td><%= (Math.round(unit.wins/unit.games * 10000) / 100).toFixed(2) %></td>
+                        <td><%= (Math.round(unit.rank/unit.games * 100) / 100).toFixed(2) %></td>
+                    </tr>
+                    <% console.log(unit) %>
+                    <% let unitTiers = Object.keys(unit.tier).sort() %>
+                    <% unitTiers.forEach(cur => { %>
+                    <tr class="unit-row subrow">
                         <td></td>
                         <td></td>
                         <td class="table-stars-rarity-<%= unit.unit.rarity %>"><%- "&#9733;".repeat(+cur) %></td>
@@ -42,12 +44,17 @@
                         <td><%= (Math.round(unit.tier[cur].rank / unit.tier[cur].games *100) / 100).toFixed(2) %></td>
                     </tr>
 
+                </tbody>
+
+                    <% }) %>
                 <% }) %>
-            <% }) %>
+            
 
         </table>
     </div>
 </main>
+
+<script src="/js/stats.js"></script>
     
 
 <%- include('partials/footer') -%>

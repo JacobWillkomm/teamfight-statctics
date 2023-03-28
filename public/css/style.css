@@ -12,10 +12,14 @@ table {
     color: #F3F1F4
 }
 
-.unit-table img{
+.unit-row img{
     width: 35px;
     height: auto;
     margin: .75% 2%;
+}
+
+.subrow{
+    visibility: collapse;
 }
 
 .profile-stats ul{
