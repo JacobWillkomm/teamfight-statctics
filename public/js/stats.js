@@ -29,37 +29,51 @@ let unitTable = document.getElementById("unit-table")
 let unitHeaders = document.getElementsByClassName("unit-header")
 let unitTbodies = document.getElementsByClassName("unit-tbody")
 
-console.log(unitTable.length)
-console.log(unitHeaders)
-console.log(unitTbodies.length)
+const unitDirections = Array.from(unitHeaders).map(function (header) {
+    return '';
+});
 
 for(let i = 0; i < unitHeaders.length; i++){
     let unitHeader = unitHeaders[i];
     unitHeader.addEventListener("click", function(){
-        sortColumn(i)
+        sortColumn(i, "unit")
     })
 }
 
-const sortColumn = function(index){
+const sortColumn = function(index, section){
     console.log(index)
     const newUnitTbodies = Array.from(unitTbodies)
     console.log(newUnitTbodies)
+    let direction
+    
+    //Sort Unit Headers
+    //TODO: Generalize sort for all tables
+    if(section === "unit"){
+        direction = unitDirections[index] || 'asc';
+    }
+
+    let multipler = (direction === "asc") ? 1 : -1
+
     newUnitTbodies.sort(function(aTBody,bTBody) {
 
         const cellA = aTBody.querySelectorAll('tr')[0].querySelectorAll('td')[index].innerHTML
         const cellB = bTBody.querySelectorAll('tr')[0].querySelectorAll('td')[index].innerHTML
 
-        console.log("A: ", cellA, " B: ", cellB)
+        const a = transform(index, cellA)
+        const b = transform(index, cellB)
+
+        console.log("A: ", a, " B: ", b)
 
         switch(true){
-            case cellA > cellB:
-                return 1
-            case cellA < cellB:
-                return -1
-            case cellA === cellB:
-                return 0
+            case a > b: return 1 * multipler
+            case a < b: return -1 * multipler
+            case a === b: return 0
         }
     })
+
+    if(section === "unit"){
+        unitDirections[index] = direction === "asc" ? "desc" : "asc"
+    }
 
     Array.prototype.forEach.call(unitTbodies, function(unitTbody) {
         unitTable.removeChild(unitTbody)
@@ -70,3 +84,17 @@ const sortColumn = function(index){
     })
 
 }
+
+// Transform the content of given cell in given column
+const transform = function (index, content) {
+    // Get the data type of column
+    //TODO: generalize for multiple tables
+    const type = unitHeaders[index].getAttribute('data-type');
+    switch (type) {
+        case 'number':
+            return parseFloat(content);
+        case 'string':
+        default:
+            return content;
+    }
+};

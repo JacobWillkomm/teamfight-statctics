@@ -11,9 +11,9 @@
                 <th class="unit-header">Rarity</th>
                 <th class="unit-header">Unit</th>
                 <th class="unit-header">Common Item</td>
-                <th class="unit-header"># games</th>
-                <th class="unit-header">Win Rate</th>
-                <th class="unit-header">Avg Rank</th>
+                <th class="unit-header" data-type="number"># games</th>
+                <th class="unit-header" data-type="number">Win Rate</th>
+                <th class="unit-header" data-type="number">Avg Rank</th>
             </tr>
 
                 <% let unitKeys = Object.keys(unitStats) %>
@@ -44,9 +44,8 @@
                         <td><%= (Math.round(unit.tier[cur].rank / unit.tier[cur].games *100) / 100).toFixed(2) %></td>
                     </tr>
 
-                </tbody>
-
                     <% }) %>
+                </tbody>
                 <% }) %>
             
 
