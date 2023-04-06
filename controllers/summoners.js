@@ -259,7 +259,7 @@ module.exports = {
         console.log(itemStats)
         
         console.log(summoner)
-        res.render("summonerStats.ejs", {unitStats: headUnitStats, itemStats: itemStats, championAssets: championAssets})
+        res.render("summonerStats.ejs", {unitStats: headUnitStats, itemStats: itemStats, championAssets: championAssets, itemAssets: itemAssets})
       } catch (err){
         console.log(err)
       }

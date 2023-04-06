@@ -1,3 +1,10 @@
+//Filter the initial tbodies
+document.addEventListener("DOMContentLoaded", function(){
+    let initUnitFilter = document.getElementsByClassName("unit-filter-selected")[0]
+    UpdateTables(initUnitFilter)
+})
+
+//Collabsible Champion Tiers
 let rows = document.getElementsByTagName("tr")
 for(let i = 0; i < rows.length; i++){
     let row = rows[i]
@@ -25,6 +32,7 @@ for(let i = 0; i < rows.length; i++){
     })
 }
 
+//Unit Table:
 let unitTable = document.getElementById("unit-table")
 let unitHeaders = document.getElementsByClassName("unit-header")
 let unitTbodies = document.getElementsByClassName("unit-tbody")
@@ -98,3 +106,35 @@ const transform = function (index, content) {
             return content;
     }
 };
+
+let unitFilters = document.querySelector(".unit-filter").children
+
+for(let i = 0; i < unitFilters.length; i++){
+    let filterSet = unitFilters[i];
+    filterSet.addEventListener("click", function(){
+        //For each unitFilter, remove "unit-filter-selected" from classlist
+        for(let i = 0; i < unitFilters.length; i++){
+            unitFilters[i].classList.remove("unit-filter-selected")
+        }
+        //Add "unit-filter-selected" to this one
+        filterSet.classList.add("unit-filter-selected")
+
+        //Update Tables
+        UpdateTables(unitFilters[i])
+
+    })
+}
+
+//For each TBody in the document, collapse the TBody if not in filterSet
+function UpdateTables(filterSet){
+    let tbodies = document.querySelectorAll("tbody")
+    for(let i = 0; i < tbodies.length; i++ ){
+        let unitSet = tbodies[i].children[0].children[0].innerHTML
+
+        if(unitSet.slice(0,1) !== filterSet.innerHTML.split(' ')[1] && unitSet !== "Set"){
+            tbodies[i].style.visibility = "collapse"
+        }else{
+            tbodies[i].style.visibility = "visible"
+        }
+    }
+}
