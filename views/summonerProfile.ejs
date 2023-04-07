@@ -117,9 +117,11 @@
                 <ul>
                   <% let matchTraits = summonerMatches[i].data.traits.sort((a,b) => b.tier_current - a.tier_current) %>
                   <% for(var j=0; j<matchTraits.length; j++) {%>
-                    <% if(matchTraits[j].tier_current > 0) { %>
+                    <% let trait = matchTraits[j] %>
+                    <% let traitAsset = traitAssets[trait.name.split('_')[1]] %>
+                    <% if(trait.tier_current > 0) { %>
                     <li>
-                      <%= matchTraits[j].name.split('_')[1] %> (<%=matchTraits[j].tier_current %>/<%= matchTraits[j].tier_total %>)
+                      <img src="<%= traitAsset.assetUrl %>"> <%= traitAsset.name %> (<%=matchTraits[j].tier_current %>/<%= matchTraits[j].tier_total %>)
                     </li>
                     <% } %>
                   <% } %>

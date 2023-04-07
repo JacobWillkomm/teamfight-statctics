@@ -18,6 +18,11 @@ table {
     margin: .75% 2%;
 }
 
+.table-item{
+    border: lightgray solid 1px !important;
+    border-radius: 10%;
+}
+
 .subrow{
     visibility: collapse;
 }

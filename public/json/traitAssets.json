@@ -26,6 +26,10 @@
         "name" : "Cavalier",
         "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_5_cavalry.png"
     },
+    "Cannoneer" : {
+        "name" : "Cannoneer",
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_5_cannoneer.png"
+    },
     "Assassin" : {
         "name" : "Assassin",
         "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_6_assassin.png"
@@ -136,99 +140,123 @@
     },
     "Ace" : {
         "name" : "Ace",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_ace.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_ace.png"
     },
     "Admin" : {
         "name" : "Admin",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_admin.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_admin.png"
     },
     "Aegis" : {
         "name" : "Aegis",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_aegis.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_aegis.png"
     },
     "AnimaSquad" : {
         "name" : "Anima Squad",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_animasquad.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_animasquad.png"
     },
     "Arsenal" : {
         "name" : "Arsenal",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_arsenal.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_arsenal.png"
     },
     "Civilian" : {
         "name" : "Civilian",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_civilian.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_civilian.png"
     },
     "Corrupted" : {
         "name" : "Corrupted",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_courrupted.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_corrupted.png"
     },
     "Defender" : {
         "name" : "Defender",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_defender.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_defender.png"
     },
     "Forecaster" : {
         "name" : "Forecaster",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_forecaster.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_forecaster.png"
     },
     "GenAE" : {
         "name" : "Gadgeteen",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_gadgeteens.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_gadgeteens.png"
     },
     "Hacker" : {
         "name" : "Hacker",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_hacker.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_hacker.png"
     },
     "Heart" : {
         "name" : "Heart",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_heart.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_heart.png"
     },
     "SpaceCorps" : {
         "name" : "Laser Corps",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_lasercorps.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_lasercorps.png"
     },
     "Mascot" : {
         "name" : "Mascot",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_mascot.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_mascot.png"
     },
     "Mechaprime" : {
         "name" : "MechaPRIME",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_mechaprime.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_mechaprime.png"
     },
     "OxForce" : {
         "name" : "Ox Force",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_oxforce.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_oxforce.png"
     },
     "Prankster" : {
         "name" : "Prankster",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_prankster.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_prankster.png"
     },
     "Recon" : {
         "name" : "Recon",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_recon.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_recon.png"
     },
     "Renegade" : {
         "name" : "Renegade",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_renegade.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_renegade.png"
     },
     "Channeler" : {
         "name" : "Spellslinger",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_spellslinger.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_spellslinger.png"
+    },
+    "GunMage" : {
+        "name" : "Quickdraw",
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_quickdraw.tft_set8_stage2.png"
     },
     "Supers" : {
         "name" : "Supers",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_supers.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_supers.png"
     },
     "Deadeye" : {
         "name" : "Sureshot",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_sureshot.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_sureshot.png"
     },
     "Threat" : {
         "name" : "Threat",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_threat.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_threat.png"
     },
     "UndergroundThe" : {
         "name" : "Underground",
-        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_underground.png"
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_underground.png"
+    },
+    "Infiniteam" : {
+        "name" : "Infiniteam",
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_infiniteam.tft_set8_stage2.png"
+    },
+    "Parallel" : {
+        "name" : "Parallel",
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_parallel.tft_set8_stage2.png"
+    },
+    "Quickdraw" : {
+        "name" : "Quickdraw",
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_quickdraw.tft_set8_stage2.png"
+    },
+    "Riftwalker" : {
+        "name" : "Riftwalker",
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_riftwalker.tft_set8_stage2.png"
+    },
+    "Pulsefire" : {
+        "name" : "Infiniteam",
+        "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_infiniteam.tft_set8_stage2.png"
     }
     
     

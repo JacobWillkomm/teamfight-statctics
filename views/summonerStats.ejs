@@ -35,7 +35,7 @@
                         <td><%= unitKey.split("_")[0].slice(3) %></td>
                         <td><%= unit.unit.rarity + 1 %></td>
                         <td><img src="<%= championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl %>"><%= championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].name %></td>
-                        <td><img src="<%= commonItemAsset %>"></td>
+                        <td><img class="table-item" src="<%= commonItemAsset %>"></td>
                         <td><%= unit.games %></td>
                         <td><%= (Math.round(unit.wins/unit.games * 10000) / 100).toFixed(2) %></td>
                         <td><%= (Math.round(unit.rank/unit.games * 100) / 100).toFixed(2) %></td>

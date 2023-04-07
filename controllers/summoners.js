@@ -9,6 +9,8 @@ let rawChampionAssets = fs.readFileSync("./public/json/championAssets.json")
 let championAssets = JSON.parse(rawChampionAssets);
 let rawItemAssets = fs.readFileSync("./public/json/itemAssets.json")
 let itemAssets = JSON.parse(rawItemAssets)
+let rawTraitAssets = fs.readFileSync("./public/json/traitAssets.json")
+let traitAssets = JSON.parse(rawTraitAssets)
 
 const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 
@@ -117,7 +119,7 @@ module.exports = {
           stats.augmentArray = Object.entries(stats.augments).filter(ele => ele[1].games > 1).sort((a,b) => a[1].rank - b[1].rank)
           stats.unitArray = Object.entries(stats.units).sort()
           console.log("RENDER summonerProfile.ejs")
-          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user, assets: championAssets, itemAssets: itemAssets });
+          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user, assets: championAssets, itemAssets: itemAssets, traitAssets: traitAssets });
         } catch (err) {
           console.log("Summoner not Found")
           res.render("summonerNotFound.ejs")
