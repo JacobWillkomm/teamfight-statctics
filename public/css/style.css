@@ -12,6 +12,72 @@ table {
     color: #F3F1F4
 }
 
+.hexagon {
+    position: relative;
+    height: 44px;
+    width: calc(44px * .9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hexagon:before, .double:after {
+    position: absolute;
+    content: '';
+  }
+  .hexagon:before {
+    top: 3px;  /* border width */
+    left: 3px;  /* border width */
+    height: calc(100% - 6px);  /* 100% - (2 * border width) */
+    width: calc(100% - 6px);  /* 100% - (2 * border width) */
+  }
+  .hexagon, .hexagon:before, .double:after {
+    -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  }
+
+.trait-tier-1 {
+    background: #cd7f32;
+}
+.trait-tier-2 {
+    background: silver;
+}
+.trait-tier-3 {
+    background: gold;
+}
+.trait-tier-4 {
+    background: lightskyblue;
+}
+
+
+
+.match-trait{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.match-trait-asset{
+    position: absolute;
+    height: 60%;
+    width: auto;
+}
+
+.match-assets{
+    position: relative;
+}
+.match-assets li{
+    position: absolute;
+}
+
+.trait-name{
+    visibility: hidden;
+    padding-left: 2.5%;
+}
+
+.match-assets li:hover .trait-name{
+    visibility: visible;
+}
+
 .unit-row img{
     width: 35px;
     height: auto;

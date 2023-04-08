@@ -114,14 +114,17 @@
               </li>
               <li class="match-trait-list">
                 <span>Traits</span>
-                <ul>
-                  <% let matchTraits = summonerMatches[i].data.traits.sort((a,b) => b.tier_current - a.tier_current) %>
+                <ul class="match-assets">
+                  <% let matchTraits = summonerMatches[i].data.traits.sort((a,b) => (b.tier_current / b.tier_total) - (a.tier_current / a.tier_total)) %>
                   <% for(var j=0; j<matchTraits.length; j++) {%>
                     <% let trait = matchTraits[j] %>
                     <% let traitAsset = traitAssets[trait.name.split('_')[1]] %>
                     <% if(trait.tier_current > 0) { %>
-                    <li>
-                      <img src="<%= traitAsset.assetUrl %>"> <%= traitAsset.name %> (<%=matchTraits[j].tier_current %>/<%= matchTraits[j].tier_total %>)
+                    <li class="match-trait" style="top: <%= 35 * j %>px; left: <%= 22 * (j%2) %>px">
+                      <div class="hexagon trait-tier-<%=trait.current >= 4 ? 4 : Math.round(trait.tier_current/trait.tier_total * 3)%>">
+                        <img class="match-trait-asset" src="<%= traitAsset.assetUrl %>">
+                      </div> 
+                      <span class="trait-name"><%= traitAsset.name %> </span>
                     </li>
                     <% } %>
                   <% } %>
