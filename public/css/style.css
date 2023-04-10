@@ -48,7 +48,17 @@ table {
     background: lightskyblue;
 }
 
-
+.match-trait-asset-mask{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    mask-size: auto auto;
+    -webkit-mask-size: auto auto;
+    mask-repeat: no-repeat;
+    -webkit-mask-repeat: no-repeat;
+    mask-position: center;
+    -webkit-mask-position: center;
+}
 
 .match-trait{
     width: 100%;
@@ -164,7 +174,7 @@ table {
     padding: 0;
 }
 .unit-list{
-    width: 55%;
+    width: 40%;
 }
 .unit-list ul{
     display:flex;

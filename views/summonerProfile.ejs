@@ -67,10 +67,8 @@
       </div>
 
     <div class="row">
-      <div class="col-3">
-
-      </div>
-      <div class="col-9">
+      <div class="col-1"></div>
+      <div class="col-11">
         <ul class="row list-unstyled match-list">
           <% for(var i=0; i<summonerMatches.length; i++) {%>
           <li>
@@ -122,7 +120,8 @@
                     <% if(trait.tier_current > 0) { %>
                     <li class="match-trait" style="top: <%= 35 * j %>px; left: <%= 22 * (j%2) %>px">
                       <div class="hexagon trait-tier-<%=trait.current >= 4 ? 4 : Math.round(trait.tier_current/trait.tier_total * 3)%>">
-                        <img class="match-trait-asset" src="<%= traitAsset.assetUrl %>">
+                        <div class="match-trait-asset-mask" style=" mask-image: url(<%= traitAsset.assetUrl %>); -webkit-mask-image: url(<%= traitAsset.assetUrl %>)"></div>
+                        <!-- <img class="match-trait-asset" src="<%= traitAsset.assetUrl %>"> -->
                       </div> 
                       <span class="trait-name"><%= traitAsset.name %> </span>
                     </li>
