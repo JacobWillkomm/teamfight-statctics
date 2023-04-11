@@ -33,15 +33,19 @@
               <h4>Top Traits</h4>
               <% if(stats.traitArray.length > 2) { %>
               <ul class="top-traits">
-                <li><img src="../imgs/traits/bard.png"><%= stats.traitArray[0][0].split('_')[1] %></li>
-                <li><img src="../imgs/traits/evoker.png"><%= stats.traitArray[1][0].split('_')[1] %></li>
-                <li><img src="../imgs/traits/bard.png"><%= stats.traitArray[2][0].split('_')[1] %></li>
-                
-                <!-- TODO: Fix dynamic trait assets
-                <li><img src="../imgs/traits/<%=stats.traitArray[0][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[0][0].split('_')[1] %></li>
-                <li><img src="../imgs/traits/<%=stats.traitArray[1][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[1][0].split('_')[1] %></li>
-                <li><img src="../imgs/traits/<%=stats.traitArray[2][0].split('_')[1].toLowerCase() %>.png"><%= stats.traitArray[2][0].split('_')[1] %></li>
-                -->
+                <% for(let i = 0; i <= 2; i++){ %>
+                  <% let trait = stats.traitArray[i] %>
+                  <% console.log(trait) %>
+                  <% let traitAsset = traitAssets[trait[0].split('_')[1]] %>
+                  <% console.log(traitAsset) %>
+                  <li class="match-trait" style="top: <%= 35 * i %>px; left: <%= 22 * (i%2) %>px">
+                    <div class="hexagon trait-tier-<%=3 - i%>">
+                      <div class="match-trait-asset-mask>" style=" mask-image: url(<%= traitAsset.assetUrl %>); -webkit-mask-image: url(<%= traitAsset.assetUrl %>)"></div>
+                    </div> 
+                    <span class="top-trait-label"><%= traitAsset.name %> </span>
+                  </li>
+                  
+                <% } %>
               </ul>
               <% } else { %>
                 <span>Please import matches</span>
@@ -81,9 +85,7 @@
                 <span>Team</span>
                 <ul>
                   <% let sortedUnits = summonerMatches[i].data.units.sort((a,b) => a.rarity.toString().localeCompare(b.rarity.toString()) || a.tier - b.tier) %>
-                  <% console.log("Sorted Units Length: ", sortedUnits) %>
                   <% for(var j=0; j<sortedUnits.length; j++) {%>
-                    <% if(sortedUnits[j].itemNames.length > 0) {console.log(sortedUnits[j].character_id, sortedUnits[j].itemNames)} %>
                     <li class="unit-container <%= "rarity-"+sortedUnits[j].rarity %>">
 
                         <!-- Tier (1-3) -->
@@ -96,13 +98,10 @@
                           <% let unitItems = sortedUnits[j].itemNames %>
                           <% let itemAsset = itemAssets.TFT.transparent.assetUrl %>
                           <% (unitItems.length > 0 && unitItems[0].split('_')[0] === "TFT") ? itemAsset = itemAssets[unitItems[0].split('_')[0]][unitItems[0].split('_')[2]].assetUrl : itemAsset = itemAssets.TFT.transparent.assetUrl %>
-                          <% console.log(" 0th: ", itemAsset) %>
                           <img class="item-box" src=<%= itemAsset %>>
                           <% (unitItems.length > 1 && unitItems[1].split('_')[0] === "TFT") ? itemAsset = itemAssets[unitItems[1].split('_')[0]][unitItems[1].split('_')[2]].assetUrl : itemAsset = itemAssets.TFT.transparent.assetUrl %>
-                          <% console.log(" 1st: ", itemAsset) %>
                           <img class="item-box" src=<%= itemAsset %>>
                           <% (unitItems.length > 2 && unitItems[2].split('_')[0] === "TFT") ? itemAsset = itemAssets[unitItems[2].split('_')[0]][unitItems[2].split('_')[2]].assetUrl : itemAsset = itemAssets.TFT.transparent.assetUrl %>
-                          <% console.log(" 2nd: ", itemAsset) %>
                           <img class="item-box" src=<%= itemAsset %>>
                         </div>
                         <p class="<%= (j >= 5) ? "unit-name-top" : "unit-name-bottom" %>"><%= assets[set].champions[sortedUnits[j].character_id.split('_')[1].toLowerCase()].name %></p>
@@ -121,7 +120,6 @@
                     <li class="match-trait" style="top: <%= 35 * j %>px; left: <%= 22 * (j%2) %>px">
                       <div class="hexagon trait-tier-<%=trait.current >= 4 ? 4 : Math.round(trait.tier_current/trait.tier_total * 3)%>">
                         <div class="match-trait-asset-mask" style=" mask-image: url(<%= traitAsset.assetUrl %>); -webkit-mask-image: url(<%= traitAsset.assetUrl %>)"></div>
-                        <!-- <img class="match-trait-asset" src="<%= traitAsset.assetUrl %>"> -->
                       </div> 
                       <span class="trait-name"><%= traitAsset.name %> </span>
                     </li>
