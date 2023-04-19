@@ -19,17 +19,18 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: lightgray;
   }
   .hexagon:before, .double:after {
     position: absolute;
     content: '';
   }
   .hexagon:before {
-    top: 3px;  /* border width */
-    left: 3px;  /* border width */
-    background-color: black;
-    height: calc(100% - 6px);  /* 100% - (2 * border width) */
-    width: calc(100% - 6px);  /* 100% - (2 * border width) */
+    top: 2px;  /* border width */
+    left: 2px;  /* border width */
+    background-color: var(--my-color-var); 
+    height: calc(100% - 4px);  /* 100% - (2 * border width) */
+    width: calc(100% - 4px);  /* 100% - (2 * border width) */
   }
   .hexagon, .hexagon:before, .double:after {
     -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
@@ -52,9 +53,9 @@ table {
 .match-trait-asset-mask{
     width: 100%;
     height: 100%;
-    background-color: white;
-    mask-size: auto auto;
-    -webkit-mask-size: auto auto;
+    background-color: black;
+    mask-size: 80% auto;
+    -webkit-mask-size: 80% auto;
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
     mask-position: center;

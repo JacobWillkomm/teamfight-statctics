@@ -33,14 +33,15 @@
               <h4>Top Traits</h4>
               <% if(stats.traitArray.length > 2) { %>
               <ul class="top-traits">
+                <% let traitColorArray = ["#cd7f32", "silver", "gold", "lightskyblue"] %>
                 <% for(let i = 0; i <= 2; i++){ %>
                   <% let trait = stats.traitArray[i] %>
                   <% console.log(trait) %>
                   <% let traitAsset = traitAssets[trait[0].split('_')[1]] %>
                   <% console.log(traitAsset) %>
                   <li class="match-trait" style="top: <%= 35 * i %>px; left: <%= 22 * (i%2) %>px">
-                    <div class="hexagon trait-tier-<%=3 - i%>">
-                      <div class="match-trait-asset-mask>" style=" mask-image: url(<%= traitAsset.assetUrl %>); -webkit-mask-image: url(<%= traitAsset.assetUrl %>)"></div>
+                    <div class="hexagon" style="--my-color-var: <%= traitColorArray[2 - i] %>">
+                      <div class="match-trait-asset-mask" style=" mask-image: url(<%= traitAsset.assetUrl %>); -webkit-mask-image: url(<%= traitAsset.assetUrl %>)"></div>
                     </div> 
                     <span class="top-trait-label"><%= traitAsset.name %> </span>
                   </li>
@@ -56,9 +57,17 @@
               <h4>Top Augments</h4>
               <% if(stats.traitArray.length > 2) { %>
               <ul class="top-traits">
-                <li><img src="../imgs/traits/legend.png"><%= stats.augmentArray[0][0].split('_')[2] %></li>
-                <li><img src="../imgs/traits/legend.png"><%= stats.augmentArray[1][0].split('_')[2] %></li>
-                <li><img src="../imgs/traits/legend.png"><%= stats.augmentArray[2][0].split('_')[2] %></li>
+                <% let traitColorArray = ["#cd7f32", "silver", "gold", "lightskyblue"] %>
+                <% for(let i = 0; i <= 2; i++){ %>
+                  <% let augment = stats.augmentArray[i] %>
+                  
+                  <li class="match-trait" style="top: <%= 35 * i %>px; left: <%= 22 * (i%2) %>px">
+                    <div class="hexagon" style="--my-color-var: <%= traitColorArray[2 - i] %>">
+                      <div class="match-trait-asset-mask" style=" mask-image: url(https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_shapeshifter.png); -webkit-mask-image: url(https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_shapeshifter.png)"></div>
+                    </div> 
+                    <span class="top-trait-label"><%= augment[0].split('_')[2] %> </span>
+                  </li>
+                  <% } %>
               </ul>
               <% } else { %>
                 <span>Please import matches</span>

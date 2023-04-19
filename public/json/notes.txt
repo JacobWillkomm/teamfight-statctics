@@ -4,3 +4,6 @@ https://raw.communitydragon.org/latest/game/assets/ux/traiticons/
 #TFT Standard Item assets:
 https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/
 
+#Better Hexagon tiles:
+https://css-tricks.com/hexagons-and-beyond-flexible-responsive-grid-patterns-sans-media-queries/
+
