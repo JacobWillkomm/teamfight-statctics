@@ -2,239 +2,239 @@
     "TFT" : {
         "ArchangelsStaff" : {
             "name" : "Archangel Staff",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/archangel_staff.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/archangel_staff.png"
         },
         "BFSword" : {
             "name" : "B.F. Sword",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/bf_sword.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/bf_sword.png"
         },
         "Bloodthirster" : {
             "name" : "Bloodthirster",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/bloodthirster.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/bloodthirster.png"
         },
         "BlueBuff" : {
             "name" : "Blue Buff",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/blue_buff.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/blue_buff.png"
         },
         "BrambleVest" : {
             "name" : "Bramble Vest",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/bramble_vest.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/bramble_vest.png"
         },
         "ChainVest" : {
             "name" : "Chain Vest",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/chain_vest.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/chain_vest.png"
         },
         "ChaliceOfPower" : {
             "name" : "Chalice of Power",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/chalice_of_power.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/chalice_of_power.png"
         },
         "Chalice" : {
             "name" : "Chalice of Power",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/chalice_of_power.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/chalice_of_power.png"
         },
         "Deathblade" : {
             "name" : "Death Blade",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/death_blade.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/death_blade.png"
         },
         "DragonsClaw" : {
             "name" : "Dragon's Claw",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/dragons_claw.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/dragons_claw.png"
         },
         "EdgeOfNight" : {
             "name" : "Edge of Night",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/edge_of_night.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/edge_of_night.png"
         },
         "EmptyBag" : {
             "name" : "",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/transparent.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/transparent.png"
         },
         "ForceOfNature" : {
             "name" : "Force of Nature",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft_item_forceofnature.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/tft_item_forceofnature.png"
         },
         "FrozenHeart" : {
             "name" : "Frozen Heart",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft_item_frozenheart.tft_set7.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/tft_item_frozenheart.tft_set7.png"
         },
         "GiantsBelt" : {
             "name" : "Giant's Belt",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/gaints_belt.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/gaints_belt.png"
         },
         "GargoyleStoneplate" : {
             "name" : "Gargoyle Stoneplate",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/gargoyle_stoneplate.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/gargoyle_stoneplate.png"
         },
         "GiantSlayer" : {
             "name" : "Giant Slayer",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/giant_slayer.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/giant_slayer.png"
         },
         "MadredsBloodrazor" : {
             "name" : "Giant Slayer",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/giant_slayer.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/giant_slayer.png"
         },
         "GuardianAngel" : {
             "name" : "Guardian Angel",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/guardian_angel.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/guardian_angel.png"
         },
         "GuinsoosRageblade" : {
             "name" : "Guinsoo's Rageblade",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/guinsoos_rageblade.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/guinsoos_rageblade.png"
         },
         "HandOfJustice" : {
             "name" : "Hand of Justice",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/hand_of_justice.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/hand_of_justice.png"
         },
         "HextechGunblade" : {
             "name" : "Hextech Gunblade",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/hextech_gunblade.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/hextech_gunblade.png"
         },
         "InfinityEdge" : {
             "name" : "Infinity Edge",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/infinity_edge.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/infinity_edge.png"
         },
         "IonicSpark" : {
             "name" : "Ionic Spark",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/ionic_spark.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/ionic_spark.png"
         },
         "JeweledGauntlet" : {
             "name" : "Jeweled Gauntlet",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/jeweled_guantlet.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/jeweled_guantlet.png"
         },
         "LastWhisper" : {
             "name" : "Last Whisper",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/last_whisper.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/last_whisper.png"
         },
         "LocketOfTheIronSolari" : {
             "name" : "Locket of the Iron Solari",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/locket_of_the_iron_solari.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/locket_of_the_iron_solari.png"
         },
         "Morellonomicon" : {
             "name" : "Morellonomicon",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/morellonomicon.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/morellonomicon.png"
         },
         "NeedlesslyLargeRod" : {
             "name" : "Needlessly Large Rod",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/needlessly_large_rod.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/needlessly_large_rod.png"
         },
         "NegatronCloak" : {
             "name" : "Negatron Cloak",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/negatron_cloak.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/negatron_cloak.png"
         },
         "PowerGauntlet" : {
             "name" : "Banshee's Claw",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft_item_mittens.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/tft_item_mittens.png"
         },
         "Quicksilver" : {
             "name" : "Quicksilver",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/quicksilver.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/quicksilver.png"
         },
         "RabadonsDeathcap" : {
             "name" : "Rabadon's Deathcap",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/rabadons_deathcap.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/rabadons_deathcap.png"
         },
         "RapidFireCannon" : {
             "name" : "Rapid Fire Cannon",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/rapid_fire_cannon.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/rapid_fire_cannon.png"
         },
         "RecurveBow" : {
             "name" : "Recurve Bow",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/recurve_bow.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/recurve_bow.png"
         },
         "RedBuff" : {
             "name" : "Sunfire Cape",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/sunfire_cape.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/sunfire_cape.png"
         },
         "Redemption" : {
             "name" : "Redemption",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/redemption.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/redemption.png"
         },
         "RunaansHurricane" : {
             "name" : "Runaan's Hurricane",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/runaans_hurricane.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/runaans_hurricane.png"
         },
         "SeraphsEmbrace" : {
             "name" : "Seraph's Embrace",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft_item_seraphsembrace.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/tft_item_seraphsembrace.png"
         },
         "Shroud" : {
             "name" : "Shroud of Stillness",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/shroud_of_stillness.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/shroud_of_stillness.png"
         },
         "ShroudOfStillness" : {
             "name" : "Shroud of Stillness",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/shroud_of_stillness.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/shroud_of_stillness.png"
         },
         "SparringGloves" : {
             "name" : "Sparring Gloves",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/sparring_gloves.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/sparring_gloves.png"
         },
         "Spatula" : {
             "name" : "Spatula",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/spatula.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/spatula.png"
         },
         "SpearOfShojin" : {
             "name" : "Spear of Shojin",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/spear_of_shojin.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/spear_of_shojin.png"
         },
         "StatikkShiv" : {
             "name" : "StatikkShiv",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/statikk_shiv.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/statikk_shiv.png"
         },
         "Stridebreaker" : {
             "name" : "Stridebreaker",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/stridebreaker.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/stridebreaker.png"
         },
         "SunfireCape" : {
             "name" : "Sunfire Cape",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/sunfire_cape.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/sunfire_cape.png"
         },
         "TacticiansCrown" : {
             "name" : "Tactician's Crown",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/tacticians_crown.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/tacticians_crown.png"
         },
         "TearOfTheGoddess" : {
             "name" : "Tear of the Goddess",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/tear_of_the_goddess.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/tear_of_the_goddess.png"
         },
         "ThiefsGloves" : {
             "name" : "Thief's Gloves",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/thieves_gloves.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/thieves_gloves.png"
         },
         "TitansResolve" : {
             "name" : "Titan's Resolve",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/titans_resolve.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/titans_resolve.png"
         },
         "TitanicHydra" : {
             "name" : "Titanic Hydra",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/tft_item_titanichydra.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/tft_item_titanichydra.png"
         },
         "transparent" : {
             "name" : "",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/transparent.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/transparent.png"
         },
         "UnstableConcoction" : {
             "name" : "Hand of Justice",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/hand_of_justice.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/hand_of_justice.png"
         },
         "WarmogsArmor" : {
             "name" : "Warmog's Armor",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/warmogs_armor.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/warmogs_armor.png"
         },
         "WintersApproach" : {
             "name" : "Winter's Approach",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/winters_approach.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/winters_approach.png"
         },
         "ZekesHerald" : {
             "name" : "Zeke's Herald",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/zekes_herald.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/zekes_herald.png"
         },
         "Zephyr" : {
             "name" : "Zephyr",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/zephyr.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/zephyr.png"
         },
         "ZzrotPortal" : {
             "name" : "Zz'rot Portal",
-            "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/maps/particles/tft/item_icons/standard/zzrot_portal.png"
+            "assetUrl" : "https://raw.communitydragon.org/13.7/game/assets/maps/particles/tft/item_icons/standard/zzrot_portal.png"
         }
     }
 }

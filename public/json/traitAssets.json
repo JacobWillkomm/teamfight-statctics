@@ -194,8 +194,8 @@
         "name" : "Mascot",
         "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_mascot.png"
     },
-    "Mechaprime" : {
-        "name" : "MechaPRIME",
+    "ExoPrime" : {
+        "name" : "Mecha: PRIME",
         "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/traiticons/trait_icon_8_mechaprime.png"
     },
     "OxForce" : {

@@ -79,6 +79,7 @@
         </div>
       </div>
 
+    <!-- Summoner Matches -->
     <div class="row">
       <div class="col-1"></div>
       <div class="col-11">
@@ -90,6 +91,7 @@
                 <span>Rank</span>
                 <h2><%= summonerMatches[i].data.placement %></h2>
               </li>
+              <!-- Team -->
               <li class="summonerMatch unit-list">
                 <span>Team</span>
                 <ul>
@@ -97,7 +99,7 @@
                   <% for(var j=0; j<sortedUnits.length; j++) {%>
                     <li class="unit-container <%= "rarity-"+sortedUnits[j].rarity %>">
 
-                        <!-- Tier (1-3) -->
+                        <!-- Champion Tier Tier (1-3) -->
                         <%- "&#9733;".repeat(sortedUnits[j].tier) %>
                         <% let set = "set_" + summonerMatches[i].setNumber %>
                         <img class="unit-asset" src="<%= assets[set].champions[sortedUnits[j].character_id.split('_')[1].toLowerCase()].assetUrl %>">
@@ -118,16 +120,21 @@
                   <% } %>
                 </ul>
               </li>
+              <!-- Traits -->
               <li class="match-trait-list">
                 <span>Traits</span>
                 <ul class="match-assets">
+                  <% let traitColorArray = ["#cd7f32", "silver", "gold", "lightskyblue"] %>
                   <% let matchTraits = summonerMatches[i].data.traits.sort((a,b) => (b.tier_current / b.tier_total) - (a.tier_current / a.tier_total)) %>
                   <% for(var j=0; j<matchTraits.length; j++) {%>
                     <% let trait = matchTraits[j] %>
+                    <% console.log(trait) %>
                     <% let traitAsset = traitAssets[trait.name.split('_')[1]] %>
+                    <% let colorIndex = trait.current >= 3 ? 4 : Math.round(trait.tier_current/trait.tier_total * 3)-1 %>
+                    <% console.log(traitAsset) %>
                     <% if(trait.tier_current > 0) { %>
                     <li class="match-trait" style="top: <%= 35 * j %>px; left: <%= 22 * (j%2) %>px">
-                      <div class="hexagon trait-tier-<%=trait.current >= 4 ? 4 : Math.round(trait.tier_current/trait.tier_total * 3)%>">
+                      <div class="hexagon" style="--my-color-var: <%= traitColorArray[colorIndex] %>">
                         <div class="match-trait-asset-mask" style=" mask-image: url(<%= traitAsset.assetUrl %>); -webkit-mask-image: url(<%= traitAsset.assetUrl %>)"></div>
                       </div> 
                       <span class="trait-name"><%= traitAsset.name %> </span>
@@ -136,6 +143,7 @@
                   <% } %>
                 </ul>
               </li>
+              <!-- Augments -->
               <li class="match-augments">
                 <span>Augments</span>
                 <ul>
@@ -148,6 +156,8 @@
               </li>
 
             </ul>
+          <!-- Link to Match Page -->
+          <!-- TODO: Move link to match -->
           </li>
             <a href="/match/<%= summonerMatches[i].matchId.split('_')[1]%>">
               <%= summonerMatches[i].matchId%>

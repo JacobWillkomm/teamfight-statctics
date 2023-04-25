@@ -87,7 +87,7 @@ module.exports = {
       }
       try{
         //Get Matches from Riot api using puuid
-        console.log(req.params)
+        console.log("Import Match Params:",req.params)
         const result = await TftApi.Summoner.getByName( req.params.summonerName, Api.Constants.Regions.AMERICA_NORTH)
         console.log(result.response, result.response.puuid)
         const matchlistRequest = await TftApi.Match.list(result.response.puuid, Api.Constants.RegionGroups.AMERICAS, {count: 100})
