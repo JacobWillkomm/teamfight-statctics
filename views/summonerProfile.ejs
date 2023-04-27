@@ -83,6 +83,16 @@
     <div class="row">
       <div class="col-1"></div>
       <div class="col-11">
+        <div class="col-6">
+          <ul class="set-filter">
+            <li class="set-filter-selected">All Sets</li>
+            <li>Set 8</li>
+            <li>Set 7</li>
+          </ul>
+        </div>
+        <div class="col-6">
+          <!-- Pagnation-->
+        </div>
         <ul class="row list-unstyled match-list">
           <% for(var i=0; i<summonerMatches.length; i++) {%>
           <li>
@@ -167,11 +177,13 @@
         </ul>
           <div class="row justify-content-center mt-5">
             <a class="btn btn-primary" href="/feed">Return to Feed</a>
-          </div>  
+          </div> 
         </div>
       </div>  
     </div>
   </div>
   </div>
 </div>
+
+<script src="/js/summonerProfile.js"></script>
 <%- include('partials/footer') -%>

@@ -1,7 +1,7 @@
 //Filter the initial tbodies
 document.addEventListener("DOMContentLoaded", function(){
-    let initUnitFilter = document.getElementsByClassName("unit-filter-selected")[0]
-    UpdateTables(initUnitFilter)
+    let initSetFilter = document.getElementsByClassName("set-filter-selected")[0]
+    UpdateTables(initSetFilter)
 })
 
 //Collabsible Champion Tiers
@@ -57,7 +57,7 @@ const sortColumn = function(index, section){
     //Sort Unit Headers
     //TODO: Generalize sort for all tables
     if(section === "unit"){
-        direction = unitDirections[index] || 'asc';
+        direction = unitDirections[index] || 'desc';
     }
 
     let multipler = (direction === "asc") ? 1 : -1
@@ -107,20 +107,20 @@ const transform = function (index, content) {
     }
 };
 
-let unitFilters = document.querySelector(".unit-filter").children
+let setFilters = document.querySelector(".set-filter").children
 
-for(let i = 0; i < unitFilters.length; i++){
-    let filterSet = unitFilters[i];
-    filterSet.addEventListener("click", function(){
-        //For each unitFilter, remove "unit-filter-selected" from classlist
-        for(let i = 0; i < unitFilters.length; i++){
-            unitFilters[i].classList.remove("unit-filter-selected")
+for(let i = 0; i < setFilters.length; i++){
+    let set = setFilters[i];
+    set.addEventListener("click", function(){
+        //For each setFilter, remove "set-filter-selected" from classlist
+        for(let i = 0; i < setFilters.length; i++){
+            setFilters[i].classList.remove("set-filter-selected")
         }
         //Add "unit-filter-selected" to this one
-        filterSet.classList.add("unit-filter-selected")
+        set.classList.add("set-filter-selected")
 
         //Update Tables
-        UpdateTables(unitFilters[i])
+        UpdateTables(setFilters[i])
 
     })
 }
