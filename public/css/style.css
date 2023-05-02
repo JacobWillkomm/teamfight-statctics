@@ -82,12 +82,7 @@ table {
 }
 
 .trait-name{
-    visibility: visible;
     padding-left: 2.5%;
-}
-
-.match-assets li:hover .trait-name{
-    visibility: visible;
 }
 
 .unit-row img{
@@ -105,29 +100,33 @@ table {
     visibility: collapse;
 }
 
-.set-filter{
+.set-filter, .pagination{
     display: flex;
     list-style: none;
     padding: 0;
 }
 
-.set-filter li{
+.pagination{
+    justify-content: right;
+}
+
+.set-filter li, .pagination li{
     background-color: black;
     opacity: 50%;
     padding: 1% 2%;
 }
 
-.set-filter :first-child{
+.set-filter :first-child, .pagination :first-child{
     border-bottom-left-radius: 10%;
     border-top-left-radius: 10%;
 }
 
-.set-filter :last-child{
+.set-filter :last-child, .pagination :last-child{
     border-bottom-right-radius: 10%;
     border-top-right-radius: 10%;
 }
 
-.set-filter-selected{
+.set-filter-selected, .page-selected{
     background-color: dimgray !important;
 }
 

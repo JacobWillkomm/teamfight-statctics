@@ -36,9 +36,7 @@
                 <% let traitColorArray = ["#cd7f32", "silver", "gold", "lightskyblue"] %>
                 <% for(let i = 0; i <= 2; i++){ %>
                   <% let trait = stats.traitArray[i] %>
-                  <% console.log(trait) %>
                   <% let traitAsset = traitAssets[trait[0].split('_')[1]] %>
-                  <% console.log(traitAsset) %>
                   <li class="match-trait" style="top: <%= 35 * i %>px; left: <%= 22 * (i%2) %>px">
                     <div class="hexagon" style="--my-color-var: <%= traitColorArray[2 - i] %>">
                       <div class="match-trait-asset-mask" style=" mask-image: url(<%= traitAsset.assetUrl %>); -webkit-mask-image: url(<%= traitAsset.assetUrl %>)"></div>
@@ -83,19 +81,30 @@
     <div class="row">
       <div class="col-1"></div>
       <div class="col-11">
-        <div class="col-6">
-          <ul class="set-filter">
-            <li class="set-filter-selected">All Sets</li>
-            <li>Set 8</li>
-            <li>Set 7</li>
-          </ul>
-        </div>
-        <div class="col-6">
-          <!-- Pagnation-->
+        <div class="row">
+          <div class="col-6">
+            <ul class="set-filter">
+              <li class="set-filter-selected">All Sets</li>
+              <li>Set 8</li>
+              <li>Set 7</li>
+            </ul>
+          </div>
+          
+          <div class="col-6">
+            <ul class="pagination">
+              <% for(var p = 0; p < summonerMatches.length; p += 10) { %>
+                <% if(p === 0) { %>
+                  <li class="page-selected"><%= (p / 10) + 1 %></li>
+                <% }else{ %>
+                  <li><%= (p / 10) + 1 %></li>
+                <% } %>
+              <% } %>
+            </ul>
+          </div>
         </div>
         <ul class="row list-unstyled match-list">
           <% for(var i=0; i<summonerMatches.length; i++) {%>
-          <li>
+          <li style="display:<%= (i < 10)? "flex" : "none" %>;" data-set="<%=summonerMatches[i].setNumber%>">
             <ul class="match-stats">
               <li class="match-placement">
                 <span>Rank</span>
@@ -138,10 +147,8 @@
                   <% let matchTraits = summonerMatches[i].data.traits.sort((a,b) => (b.tier_current / b.tier_total) - (a.tier_current / a.tier_total)) %>
                   <% for(var j=0; j<matchTraits.length; j++) {%>
                     <% let trait = matchTraits[j] %>
-                    <% console.log(trait) %>
                     <% let traitAsset = traitAssets[trait.name.split('_')[1]] %>
                     <% let colorIndex = trait.current >= 3 ? 4 : Math.round(trait.tier_current/trait.tier_total * 3)-1 %>
-                    <% console.log(traitAsset) %>
                     <% if(trait.tier_current > 0) { %>
                     <li class="match-trait" style="top: <%= 35 * j %>px; left: <%= 22 * (j%2) %>px">
                       <div class="hexagon" style="--my-color-var: <%= traitColorArray[colorIndex] %>">
@@ -168,7 +175,6 @@
             </ul>
           <!-- Link to Match Page -->
           <!-- TODO: Move link to match -->
-          </li>
             <a href="/match/<%= summonerMatches[i].matchId.split('_')[1]%>">
               <%= summonerMatches[i].matchId%>
             </a>
