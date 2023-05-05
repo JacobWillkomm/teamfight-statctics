@@ -14,6 +14,102 @@ let traitAssets = JSON.parse(rawTraitAssets)
 
 const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 
+//Desc: Adds a match to the statsObject, both the overallStats and setStats
+//Params: StatsObj, Match
+//StatsObj is an object of objects with the key as the Set from the match
+//Match is the match data from the database
+//TODO: We should be able to instantiate the setStats inside this function so that the keys are not hardcoded
+//TODO: This could be saved as its own model (SummonerName as FK), so that the server doesn't have to recalculate.
+//      This woud require a list of games that have been added to the stats but we should be able to just use SummonerMatch
+function addMatchToHeaderStats(statsObj, match){
+  let set = "set_"+match.setNumber
+  let score = match.data.placement
+  //Ranked queue : 1100
+  let setKeys = [set, "allSets"]
+  setKeys.forEach(setTarget => {
+    if(match.data.queueId === '1100') {
+      statsObj[setTarget].rankedGames++;
+      statsObj[setTarget].totalPlacementRanked += match.data.placement;
+      statsObj[setTarget].winsRanked += (match.data.placement <= 4 ? 1 : 0);
+    }
+    //Normal and Bonus games
+    else {
+      statsObj[setTarget].normalGames++;
+      statsObj[setTarget].totalPlacementNormal += match.data.placement;
+      statsObj[setTarget].winsNormal += (match.data.placement <= 4 ? 1 : 0);
+    }
+    //Total number of games and place
+    statsObj[setTarget].games++;
+    statsObj[setTarget].totalPlacement += match.data.placement;
+    statsObj[setTarget].wins += (match.data.placement <= 4 ? 1 : 0);
+
+    //For each Unit in Units,
+    //  check for unit in our stats obect, and add it if not
+    match.data.units.map((unit) => {
+      if(Object.hasOwn(statsObj[setTarget].units, unit.character_id)){
+        statsObj[setTarget].units[unit.character_id].score += score
+        statsObj[setTarget].units[unit.character_id].games++
+        statsObj[setTarget].units[unit.character_id].rank = statsObj[setTarget].units[unit.character_id].score /statsObj[setTarget].units[unit.character_id].games
+      }
+      else{
+        //TODO: Better fix for nomsy tracking
+        //      --Nomsy's class for the game gets added to his name
+        //      --"nomsyevoker"
+        if(unit.character_id.split('_')[1].toLowerCase().slice(0,5) === "nomsy"){
+          unit.character_id = "TFT7_nomsy"
+        }
+        statsObj[setTarget].units[unit.character_id] = {score: score, games: 1, rank: score, assetUrl: championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl}
+        
+        //TODO Set 8 assets
+        if(Object.hasOwn(championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()], "name")){
+          statsObj[setTarget].units[unit.character_id].name = championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].name
+        }else{
+          statsObj[setTarget].units[unit.character_id].name = unit.character_id.split('_')[1]
+        }
+      }
+    })
+
+    //for each Augment in Augments
+    //  check for augment in stats object, add if not
+    match.data.augments.map((aug) => {
+      if(Object.hasOwn(statsObj[setTarget].augments, aug)){
+        statsObj[setTarget].augments[aug].score += score
+        statsObj[setTarget].augments[aug].games++
+        statsObj[setTarget].augments[aug].rank = statsObj[setTarget].augments[aug].score / statsObj[setTarget].augments[aug].games
+      }else{
+        statsObj[setTarget].augments[aug] = {score: score, games: 1, rank: score}
+      }
+    })
+
+    //for each trait in Traits
+    //  check for trait in our stats object
+    //TODO: Improve stats calculation:
+    //      -Traits have a tier
+    match.data.traits.map((trait) => {
+      if(Object.hasOwn(statsObj[setTarget].traits, trait.name)){
+        statsObj[setTarget].traits[trait.name].score += score
+        statsObj[setTarget].traits[trait.name].games++
+        statsObj[setTarget].traits[trait.name].rank = statsObj[setTarget].traits[trait.name].score/statsObj[setTarget].traits[trait.name].games
+      }else{
+        statsObj[setTarget].traits[trait.name] = {score: score, games: 1, rank: score}
+      }
+    })
+  })
+}
+
+//Desc: Sorts the Traits, Augments, and Units and add them to new values in the object 
+//Params: statsObj
+//statsObj is a object of Objects with the setNumber as the key
+//TODO: Sort the units
+function sortHeaderStats(statsObj){
+  let statValues = Object.values(statsObj)
+  statValues.forEach(setStats => {
+    setStats.traitArray = Object.entries(setStats.traits).filter(ele => ele[1].games > 4).sort((a,b) => a[1].rank - b[1].rank)
+    setStats.augmentArray = Object.entries(setStats.augments).filter(ele => ele[1].games > 1).sort((a,b) => a[1].rank - b[1].rank)
+    setStats.unitArray = Object.entries(setStats.units).sort()
+  })
+}
+
 module.exports = {
     getSummonerProfile: async (req, res) => {
         try {
@@ -36,90 +132,19 @@ module.exports = {
             units: {},
             traits: {},
           }
+
+          let allHeaderStats = {
+            set_8 : JSON.parse(JSON.stringify(stats)),
+            set_7 : JSON.parse(JSON.stringify(stats)),
+            allSets : JSON.parse(JSON.stringify(stats))
+          }
+
           //For each match, track the stats
-          //      Placement represents the place the player got, 1 first, 8 last
-          //      So a lower ratio between # games & total score is better but data quality is limited by the # of games
-          //TODO: This could be saved as its own model (SummonerName as FK), so that the server doesn't have to recalculate.
-          //      This woud require a list of games that have been added to the stats but we should be able to just use SummonerMatch
-          summonerMatches.map((ele) => {
-            console.log(ele)
-            let score = ele.data.placement
-            //Ranked queue : 1100
-            if(ele.data.queueId === '1100') {
-              stats.rankedGames++;
-              stats.totalPlacementRanked += ele.data.placement;
-              stats.winsRanked += (ele.data.placement <= 4 ? 1 : 0);
-            }
-            //Normal and Bonus games
-            else {
-              stats.normalGames++;
-              stats.totalPlacementNormal += ele.data.placement;
-              stats.winsNormal += (ele.data.placement <= 4 ? 1 : 0);
-            }
-            //Total number of games and place
-            stats.games++;
-            stats.totalPlacement += ele.data.placement;
-            stats.wins += (ele.data.placement <= 4 ? 1 : 0);
-
-            //For each Unit in Units,
-            //  check for unit in our stats obect, and add it if not
-            ele.data.units.map((unit) => {
-              if(Object.hasOwn(stats.units, unit.character_id)){
-                stats.units[unit.character_id].score += score
-                stats.units[unit.character_id].games++
-                stats.units[unit.character_id].rank = stats.units[unit.character_id].score /stats.units[unit.character_id].games
-              }
-              else{
-                //TODO: Better fix for nomsy tracking
-                //      --Nomsy's class for the game gets added to his name
-                //      --"nomsyevoker"
-                if(unit.character_id.split('_')[1].toLowerCase().slice(0,5) === "nomsy"){
-                  unit.character_id = "TFT7_nomsy"
-                }
-                console.log("set_"+ele.setNumber, unit.character_id.split('_')[1].toLowerCase())
-                stats.units[unit.character_id] = {score: score, games: 1, rank: score, assetUrl: championAssets["set_"+ele.setNumber].champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl}
-                
-                //TODO Set 8 assets
-                if(Object.hasOwn(championAssets["set_"+ele.setNumber].champions[unit.character_id.split('_')[1].toLowerCase()], "name")){
-                  stats.units[unit.character_id].name = championAssets["set_"+ele.setNumber].champions[unit.character_id.split('_')[1].toLowerCase()].name
-                }else{
-                  stats.units[unit.character_id].name = unit.character_id.split('_')[1]
-                }
-              }
-            })
-
-            //for each Augment in Augments
-            //  check for augment in stats object, add if not
-            ele.data.augments.map((aug) => {
-              if(Object.hasOwn(stats.augments, aug)){
-                stats.augments[aug].score += score
-                stats.augments[aug].games++
-                stats.augments[aug].rank = stats.augments[aug].score / stats.augments[aug].games
-              }else{
-                stats.augments[aug] = {score: score, games: 1, rank: score}
-              }
-            })
-
-            //for each trait in Traits
-            //  check for trait in our stats object
-            //TODO: Improve stats calculation:
-            //      -Traits have a tier
-            ele.data.traits.map((trait) => {
-              if(Object.hasOwn(stats.traits, trait.name)){
-                stats.traits[trait.name].score += score
-                stats.traits[trait.name].games++
-                stats.traits[trait.name].rank = stats.traits[trait.name].score/stats.traits[trait.name].games
-              }else{
-                stats.traits[trait.name] = {score: score, games: 1, rank: score}
-              }
-            })
-          })
-          console.log(stats.wins/stats.games, stats.winsNormal/stats.normalGames, stats.winsRanked/stats.rankedGames)
-          stats.traitArray = Object.entries(stats.traits).filter(ele => ele[1].games > 4).sort((a,b) => a[1].rank - b[1].rank)
-          stats.augmentArray = Object.entries(stats.augments).filter(ele => ele[1].games > 1).sort((a,b) => a[1].rank - b[1].rank)
-          stats.unitArray = Object.entries(stats.units).sort()
+          summonerMatches.map((ele) => {addMatchToHeaderStats(allHeaderStats, ele)})
+          sortHeaderStats(allHeaderStats)
+          
           console.log("RENDER summonerProfile.ejs")
-          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, stats: stats, user: req.user, assets: championAssets, itemAssets: itemAssets, traitAssets: traitAssets });
+          res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, headerStats: allHeaderStats, user: req.user, assets: championAssets, itemAssets: itemAssets, traitAssets: traitAssets });
         } catch (err) {
           console.log("Summoner not Found")
           res.render("summonerNotFound.ejs")

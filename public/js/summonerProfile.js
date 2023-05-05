@@ -11,6 +11,7 @@ for(let i = 0; i < setFilters.length; i++){
         set.classList.add("set-filter-selected")
 
         //Update matches && pagnation
+        
 
     })
 }
@@ -43,4 +44,3 @@ function updateMatchDisplay(pageIndex){
     }
 }
 let matches = document.querySelector(".match-list").children
-console.log(matches)
