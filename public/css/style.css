@@ -245,6 +245,11 @@ table {
     border-radius: 10%;
 }
 
+.misc-match-stats ul{
+    list-style: none;
+    padding: 0;
+}
+
 .table-rarity-0 img{
     border: grey 2px solid;
     border-radius: 10%;

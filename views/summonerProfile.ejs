@@ -10,10 +10,11 @@
             </form>
           </div>
       </div>
+      <!-- Header Stats-->
       <div class ="col-9">
         <div class="mt-5 profile-stats">
           <% Object.entries(headerStats).forEach(([set, stats]) => {%>
-          <ul style=<%= (set !== "allSets") ? "display:none" : "display:flex" %>>
+          <ul class="stat-list" style=<%= (set !== "allSets") ? "display:none" : "display:flex" %>>
             <li>
               <h4>Top 4 Win %</h4>
               <div class="all-sets">
@@ -88,9 +89,9 @@
         <div class="row">
           <div class="col-6">
             <ul class="set-filter">
-              <li class="set-filter-selected">All Sets</li>
               <li>Set 8</li>
               <li>Set 7</li>
+              <li class="set-filter-selected">All Sets</li>
             </ul>
           </div>
           
@@ -175,14 +176,25 @@
                   <% } %>
                 </ul>
               </li>
+              <!-- Other Stats-->
+              <li class="misc-match-stats">
+                <span>End of Game</span>
+                <ul>
+                  <li>Level: <%= summonerMatches[i].data.level %></li>
+                  <li>Gold Left: <%= summonerMatches[i].data.goldLeft %></li>
+                  <li>Damage Dealt: <%= summonerMatches[i].data.damageToPlayer %></li>
+                </ul>
+
+              </li>
 
             </ul>
+          </li>
           <!-- Link to Match Page -->
           <!-- TODO: Move link to match -->
-            <a href="/match/<%= summonerMatches[i].matchId.split('_')[1]%>">
-              <%= summonerMatches[i].matchId%>
-            </a>
-          </li>
+          <a href="/match/<%= summonerMatches[i].matchId.split('_')[1]%>">
+            <%= summonerMatches[i].matchId%>
+          </a>
+          
           <% } %>
         </ul>
           <div class="row justify-content-center mt-5">
