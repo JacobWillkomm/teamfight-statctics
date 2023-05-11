@@ -17,6 +17,9 @@ const SummonerMatchSchema = new mongoose.Schema({
         type: Number,
         required: true
     },
+    gameDate: {
+        type: Number
+    },
     data: {
         augments: [String],
         companion: {

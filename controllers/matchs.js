@@ -147,6 +147,7 @@ module.exports = {
               summonerId: result.response.puuid,
               matchId: matchlist[i],
               setNumber: matchRequest.response.info.tft_set_number,
+              gameDate: matchRequest.response.info.game_datetime,
               data: {
                 augments: summonerMatchStats.augments,
                 goldLeft: summonerMatchStats.gold_left,
@@ -178,6 +179,7 @@ module.exports = {
               summonerId: result.response.puuid,
               matchId: matchlist[i],
               setNumber: matchInMongo[0].info.tftSetNumber,
+              gameDate: matchInMongo[0].info.gameDate,
               
               data: {
                 augments: summonerMatchStats.augments,

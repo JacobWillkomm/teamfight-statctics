@@ -109,6 +109,7 @@
         </div>
         <ul class="row list-unstyled match-list">
           <% for(var i=0; i<summonerMatches.length; i++) {%>
+          <!-- Match -->
           <li style="display:<%= (i < 10)? "flex" : "none" %>;" data-set="<%=summonerMatches[i].setNumber%>">
             <ul class="match-stats">
               <li class="match-placement">
@@ -183,6 +184,8 @@
                   <li>Level: <%= summonerMatches[i].data.level %></li>
                   <li>Gold Left: <%= summonerMatches[i].data.goldLeft %></li>
                   <li>Damage Dealt: <%= summonerMatches[i].data.damageToPlayer %></li>
+                  <li>Players Eliminated: <%= summonerMatches[i].data.playerEliminations</li>
+                  <li>Game Length: <%= summonerMatches[i].data.timeEliminated</li>
                 </ul>
 
               </li>
