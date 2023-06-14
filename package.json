@@ -1,7 +1,7 @@
 {
   "name": "Teamfight Statctics",
   "version": "1.0.0",
-  "description": "Teamfight Tactics match stats ",
+  "description": "Teamfight Tactics match stats",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",

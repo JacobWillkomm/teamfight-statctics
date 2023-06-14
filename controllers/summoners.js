@@ -58,7 +58,6 @@ function addMatchToHeaderStats(statsObj, match){
         if(unit.character_id.split('_')[1].toLowerCase().slice(0,5) === "nomsy"){
           unit.character_id = "TFT7_nomsy"
         }
-        console.log(unit)
         statsObj[setTarget].units[unit.character_id] = {score: score, games: 1, rank: score, assetUrl: championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl}
         
         //TODO Set 8 assets
