@@ -1,7 +1,7 @@
 {
-  "name": "binary-upload-boom",
+  "name": "Teamfight Statctics",
   "version": "1.0.0",
-  "description": "100Devs Social Network",
+  "description": "Teamfight Tactics match stats ",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js",

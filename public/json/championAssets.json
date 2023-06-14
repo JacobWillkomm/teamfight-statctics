@@ -573,7 +573,7 @@
                 "name" : "Pantheon",
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_pantheon_mobile.tft_set8_stage2.png"
             },
-            "gnar" : {
+            "gnarbig" : {
                 "name" : "Gnar",
                 "assetUrl" : "https://raw.communitydragon.org/latest/game/assets/ux/tft/championsplashes/tft8_gnar_mobile.tft_set8_stage2.png"
             },

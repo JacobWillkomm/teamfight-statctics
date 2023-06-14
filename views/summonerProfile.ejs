@@ -84,8 +84,7 @@
 
     <!-- Summoner Matches -->
     <div class="row">
-      <div class="col-1"></div>
-      <div class="col-11">
+      <div class="col-12">
         <div class="row">
           <div class="col-6">
             <ul class="set-filter">
@@ -113,12 +112,12 @@
           <li style="display:<%= (i < 10)? "flex" : "none" %>;" data-set="<%=summonerMatches[i].setNumber%>">
             <ul class="match-stats">
               <li class="match-placement">
-                <span>Rank</span>
+                <h5>Rank</h5>
                 <h2><%= summonerMatches[i].data.placement %></h2>
               </li>
               <!-- Team -->
               <li class="summonerMatch unit-list">
-                <span>Team</span>
+                <h5>Team</h5>
                 <ul>
                   <% let sortedUnits = summonerMatches[i].data.units.sort((a,b) => a.rarity.toString().localeCompare(b.rarity.toString()) || a.tier - b.tier) %>
                   <% for(var j=0; j<sortedUnits.length; j++) {%>
@@ -147,7 +146,7 @@
               </li>
               <!-- Traits -->
               <li class="match-trait-list">
-                <span>Traits</span>
+                <h5>Traits</h5>
                 <ul class="match-assets">
                   <% let traitColorArray = ["#cd7f32", "silver", "gold", "lightskyblue"] %>
                   <% let matchTraits = summonerMatches[i].data.traits.sort((a,b) => (b.tier_current / b.tier_total) - (a.tier_current / a.tier_total)) %>
@@ -168,24 +167,30 @@
               </li>
               <!-- Augments -->
               <li class="match-augments">
-                <span>Augments</span>
+                <h5>Augments</h5>
                 <ul>
-                  <% for(var j=0; j<summonerMatches[i].data.augments.length; j++) { %>
-                    <li>
-                      <%= summonerMatches[i].data.augments[j].split('_')[2] %>
-                    </li>
-                  <% } %>
+                  <li>
+                    <h6>1st Round: </h6>
+                    <%= summonerMatches[i].data.augments[0].split('_')[2] %>
+                  </li>
+                  <li>
+                    <h6>2nd Round: </h6>
+                    <%= summonerMatches[i].data.augments[1].split('_')[2] %>
+                  </li>
+                  <li>
+                    <h6>3rd Round: </h6>
+                    <%= summonerMatches[i].data.augments[2].split('_')[2] %>
+                  </li>
                 </ul>
               </li>
               <!-- Other Stats-->
               <li class="misc-match-stats">
-                <span>End of Game</span>
+                <h5>End of Game</h5>
                 <ul>
                   <li>Level: <%= summonerMatches[i].data.level %></li>
-                  <li>Gold Left: <%= summonerMatches[i].data.goldLeft %></li>
+                  <li>Gold: <%= summonerMatches[i].data.goldLeft %></li>
                   <li>Damage Dealt: <%= summonerMatches[i].data.damageToPlayer %></li>
-                  <li>Players Eliminated: <%= summonerMatches[i].data.playerEliminations</li>
-                  <li>Game Length: <%= summonerMatches[i].data.timeEliminated</li>
+                  <li>Knockouts: <%= summonerMatches[i].data.playerEliminations %></li>
                 </ul>
 
               </li>
@@ -200,9 +205,6 @@
           
           <% } %>
         </ul>
-          <div class="row justify-content-center mt-5">
-            <a class="btn btn-primary" href="/feed">Return to Feed</a>
-          </div> 
         </div>
       </div>  
     </div>

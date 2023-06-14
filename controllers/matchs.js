@@ -6,7 +6,10 @@ require("dotenv").config({ path: "./config/.env" });
 const fs = require('fs');
 let rawChampionAssets = fs.readFileSync("./public/json/championAssets.json")
 let championAssets = JSON.parse(rawChampionAssets);
-console.log(championAssets)
+let rawItemAssets = fs.readFileSync("./public/json/itemAssets.json")
+let itemAssets = JSON.parse(rawItemAssets)
+let rawTraitAssets = fs.readFileSync("./public/json/traitAssets.json")
+let traitAssets = JSON.parse(rawTraitAssets)
 
 const TftApi = new Api.TftApi({key: process.env.RIOT_API_KEY})
 
@@ -31,7 +34,7 @@ module.exports = {
           }
           //match.info.participants = Object.entries(match.info.participants).sort((a,b) => a[1].placement - b[1].placement)
           match.info.participants.sort((a,b) => a.placement - b.placement)
-          res.render("match.ejs", { match: match, user: req.user, assets: championAssets });
+          res.render("match.ejs", { match: match, user: req.user, assets: championAssets, itemAssets: itemAssets, traitAssets: traitAssets  });
         } catch (err) {
           console.log(err);
         }
@@ -154,7 +157,7 @@ module.exports = {
                 lastRound: summonerMatchStats.last_round,
                 level: summonerMatchStats.level,
                 placement: summonerMatchStats.placement,
-                playerEliminations: summonerMatchStats.playersEliminated,
+                playerEliminations: summonerMatchStats.players_eliminated,
                 puuid: summonerMatchStats.puuid,
                 timeEliminated: summonerMatchStats.time_eliminated,
                 damageToPlayer: summonerMatchStats.total_damage_to_players,
@@ -187,7 +190,7 @@ module.exports = {
                 lastRound: summonerMatchStats.last_round,
                 level: summonerMatchStats.level,
                 placement: summonerMatchStats.placement,
-                playerEliminations: summonerMatchStats.playersEliminated,
+                playerEliminations: summonerMatchStats.players_eliminated,
                 puuid: summonerMatchStats.puuid,
                 timeEliminated: summonerMatchStats.time_eliminated,
                 damageToPlayer: summonerMatchStats.total_damage_to_players,

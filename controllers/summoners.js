@@ -58,6 +58,7 @@ function addMatchToHeaderStats(statsObj, match){
         if(unit.character_id.split('_')[1].toLowerCase().slice(0,5) === "nomsy"){
           unit.character_id = "TFT7_nomsy"
         }
+        console.log(unit)
         statsObj[setTarget].units[unit.character_id] = {score: score, games: 1, rank: score, assetUrl: championAssets[set].champions[unit.character_id.split('_')[1].toLowerCase()].assetUrl}
         
         //TODO Set 8 assets
@@ -140,7 +141,10 @@ module.exports = {
           }
 
           //For each match, track the stats
-          summonerMatches.map((ele) => {addMatchToHeaderStats(allHeaderStats, ele)})
+          summonerMatches.map((ele) => {
+            //console.log(ele.data.units)
+            addMatchToHeaderStats(allHeaderStats, ele)
+          })
           sortHeaderStats(allHeaderStats)
           
           console.log("RENDER summonerProfile.ejs")
@@ -277,7 +281,6 @@ module.exports = {
               }else{
                 itemStats[item] = {games: 1, rank: match.data.placement, wins: (match.data.placement <= 4) ? 1 : 0}
               }
-
             })
           })
         })
