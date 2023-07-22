@@ -29,16 +29,16 @@ Teamfight Statctics isn’t endorsed by Riot Games and doesn’t reflect the vie
 
 
 # TODO:
-+ Update to Set-8:
-  + Assets
++ ~~Update to Set-8:~~
+  + ~~Assets~~
 + Views:
   + Add summonerSearch to Header
 + Summoner Profile Stats
   + ~~Champion Assets~~
-  + Borders based on Tier
-  + Star lv
+  + ~~Borders based on Tier~~
+  + ~~Star lv~~
   + Detailed stats for match on summonerProfile
-  + Pagenation
+  + ~~Pagenation~~
   + Store summonerStats so we can get them without recalculating
 + Detailed Champion, Augment, & Trait Stats
 + Match View
@@ -50,3 +50,5 @@ Teamfight Statctics isn’t endorsed by Riot Games and doesn’t reflect the vie
   + Add Summoners & SummonerMatches for all players in a match
   + Queue to handle requests to Riot
   + Loop through the players in a match and add each one
++ Backend:
+  + User Groups

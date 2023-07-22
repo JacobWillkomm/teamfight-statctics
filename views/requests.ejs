@@ -1,0 +1,15 @@
+<%- include('partials/header') -%>
+
+<main class="container">
+    <div class="row">
+        <h1 style="color: white">Requests</h1>
+        <ul>
+            <% for(let i = 0; i < requests.length; i++){ %>
+                <li><%= requests[i].summonerName %></li>
+            <% } %>
+        </ul>
+    </div>
+</main>
+    
+
+<%- include('partials/footer') -%>

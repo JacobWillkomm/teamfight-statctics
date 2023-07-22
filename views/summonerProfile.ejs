@@ -8,6 +8,9 @@
             <form action="/summoner/<%= summoner[0].summonerName %>/importMatches" enctype="multipart/form-data" method="POST">
               <button type="submit" class="btn btn-primary main-color-bg" value="submit">Import New Matches</button>
             </form>
+            <form action="/request/<%= summoner[0].summonerName %>" enctype="multipart/form-data" method="POST">
+              <button type="submit" class="btn btn-primary main-color-bg" value="submit">Request Matches</button>
+            </form>
           </div>
       </div>
       <!-- Header Stats-->
