@@ -1,4 +1,11 @@
 module.exports = {
+  ensureAdmin: function (req, res, next) {
+    if(req.user.role === "admin"){
+      return next();
+    }else{
+      res.redirect("/dashboard")
+    }
+  },
   ensureAuth: function (req, res, next) {
     if (req.isAuthenticated()) {
       return next();
@@ -12,5 +19,5 @@ module.exports = {
     } else {
       res.redirect("/dashboard");
     }
-  },
+  }
 };
