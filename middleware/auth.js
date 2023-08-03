@@ -3,7 +3,7 @@ module.exports = {
     if(req.user.role === "admin"){
       return next();
     }else{
-      res.redirect("/dashboard")
+      res.redirect("/")
     }
   },
   ensureAuth: function (req, res, next) {
@@ -17,7 +17,7 @@ module.exports = {
     if (!req.isAuthenticated()) {
       return next();
     } else {
-      res.redirect("/dashboard");
+      res.redirect("/");
     }
   }
 };

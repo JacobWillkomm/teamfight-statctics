@@ -5,10 +5,7 @@
       <div class="col-3">
           <div class="mt-5">
             <h2 class="main-color"><%= summoner[0].summonerName %></h2>
-            <form action="/summoner/<%= summoner[0].summonerName %>/importMatches" enctype="multipart/form-data" method="POST">
-              <button type="submit" class="btn btn-primary main-color-bg" value="submit">Import New Matches</button>
-            </form>
-            <form action="/request/<%= summoner[0].summonerName %>" enctype="multipart/form-data" method="POST">
+            <form action="/requests/<%= summoner[0].summonerName %>" enctype="multipart/form-data" method="POST">
               <button type="submit" class="btn btn-primary main-color-bg" value="submit">Request Matches</button>
             </form>
           </div>

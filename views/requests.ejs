@@ -2,10 +2,24 @@
 
 <main class="container">
     <div class="row">
-        <h1 style="color: white">Requests</h1>
+        <h1 style="color: white">Manage Requests</h1>
         <ul>
             <% for(let i = 0; i < requests.length; i++){ %>
-                <li><%= requests[i].summonerName %></li>
+                <li>
+                    <ul>
+                        <li><%= requests[i].summonerName %></li>
+                        <li>
+                            <form action="/summoner/<%= requests[i].summonerName %>/importMatches" enctype="multipart/form-data" method="POST">
+                                <button type="submit" class="btn btn-primary main-color-bg" value="submit">Import New Matches</button>
+                            </form>
+                        </li>
+                        <li>
+                            <form action="/requests/deleteRequest/<%= requests[i].summonerName %>?_method=DELETE" enctype="multipart/form-data" method="POST">
+                                <button type="submit" class="btn btn-primary main-color-bg fa fa-trash" value="submit"></button>
+                            </form>
+                        </li>
+                    </ul>
+                </li
             <% } %>
         </ul>
     </div>

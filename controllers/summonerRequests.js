@@ -23,8 +23,19 @@ module.exports = {
         }catch(err){
             //Create a request if no summonerRequest found
             console.log(err)
-
-
         }
+    },
+    
+    deleteSummonerRequest: async(req, res) => {
+        try{
+            const deleteRequest = await SummonerRequest.deleteOne({ summonerName: req.params.summonerName})
+            res.redirect("/requests")
+        }catch(err){
+            console.log(err)
+            res.redirect("/requests")
+        }
+
+
     }
+
 }
