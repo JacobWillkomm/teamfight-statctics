@@ -149,9 +149,15 @@ module.exports = {
           console.log("RENDER summonerProfile.ejs")
           res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, headerStats: allHeaderStats, user: req.user, assets: championAssets, itemAssets: itemAssets, traitAssets: traitAssets });
         } catch (err) {
-          console.log("Summoner not Found")
-          res.render("summonerNotFound.ejs")
-          console.log(err);
+          if(err instanceof TypeError){
+            res.render("summonerNotFound.ejs", {summonerName: req.params.summonerName})
+          }
+          else{
+            res.render("404.ejs")
+            console.log(err);
+          }
+
+
         }
       },
     getProfiles: async (req, res) => {
