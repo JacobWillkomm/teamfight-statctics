@@ -473,3 +473,28 @@ table {
 .acc-3-color{
     color: #F3F1F4;
 }
+
+.form-label{
+    color:#F3F1F4;
+}
+
+.btn-primary{
+    background-color:#438659;
+    border-color: #438659;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus,
+.btn-primary.active,
+.btn-primary:focus-visible{
+    background-color: #316342;
+    border-color: #316342;
+    box-shadow: none;
+}
+.btn-primary:active:focus{
+    box-shadow: 0 0 0 .25em rgba(19, 77, 53, .5);
+}
+
+
+
