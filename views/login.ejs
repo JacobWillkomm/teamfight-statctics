@@ -1,8 +1,11 @@
 <%- include('partials/header') -%>
 
 <main class="container">
-  <div class="row justify-content-center">
-    <section class="col-6 mt-5">
+  <div class="row">
+    <div class="col-md-4 mt-4 tfs-logo">
+      <img src="/imgs/android-chrome-192x192.png">
+    </div>
+    <div class="col-8 mt-4">
       <% if (locals.messages.errors) { %> <% messages.errors.forEach( el => { %>
       <div class="alert alert-danger"><%= el.msg %></div>
       <% }) %> <% } %> <% if (locals.messages.info) { %> <%
@@ -33,7 +36,7 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-    </section>
+    </dive>
   </div>
 </main>
 

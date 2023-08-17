@@ -2,10 +2,60 @@ body a {
     color: #909B8F;
 }
 body a:hover {
-    color: #F3F1F4;
+    color: #b6c5b6;
 }
 body p, li, h4 {
     color: #F3F1F4;
+}
+
+body{
+    font-family: 'Roboto Slab', serif;
+}
+
+.container {
+    padding: 0 1rem;
+}
+
+.footer {
+    border-top: rgba(255, 255, 255, 0.5) 1px solid;
+}
+
+.header{
+    display: flex;
+    width: 100%;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+    border-bottom: rgba(255, 255, 255, 0.5) 1px solid;
+    padding: .75rem 0;
+}
+
+.header a{
+    text-decoration: none;
+}
+
+.header-search,
+.header-login{
+    width: 25%;
+}
+
+.header-search{
+    text-align: left;
+}
+
+.header-login{
+    text-align: right;
+}
+
+.title{
+    width: 50%;
+    text-align: center;
+}
+
+.tfs-logo img{
+    display: block;
+    margin: auto;
+
 }
 
 table {

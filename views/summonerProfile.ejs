@@ -3,7 +3,7 @@
   <div class="row mt-5">
     <div class="row">
       <div class="col-3">
-          <div class="mt-5">
+          <div>
             <h2 class="main-color"><%= summoner[0].summonerName %></h2>
             <form action="/requests/<%= summoner[0].summonerName %>" enctype="multipart/form-data" method="POST">
               <button type="submit" class="btn btn-primary main-color-bg" value="submit">Request Matches</button>
@@ -12,7 +12,7 @@
       </div>
       <!-- Header Stats-->
       <div class ="col-9">
-        <div class="mt-5 profile-stats">
+        <div class="profile-stats">
           <% Object.entries(headerStats).forEach(([set, stats]) => {%>
           <ul class="stat-list" style=<%= (set !== "allSets") ? "display:none" : "display:flex" %>>
             <li>
