@@ -5,7 +5,7 @@ module.exports = {
     getRequests: async(req, res) => {
         try{
             const requests = await SummonerRequest.find().sort().lean()
-            res.render("requests.ejs", {requests: requests});
+            res.render("requests.ejs", {requests: requests, user: req.user});
         }catch(err){
             console.log(err)
         }

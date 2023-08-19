@@ -37,9 +37,19 @@
         <li class="title">
           <h1><a href="/">Teamfight Statctics</a></h1>
         </li>
-        <li class="header-login">
-          <a href="/login">Login</a>
-        </li>
+        <% if(user.role === "admin") { %>
+          <li class="header-login">
+            <a href="/requests">Admin Panel</a>
+          </li>
+        <% }else if(user.role === "user"){ %>
+          <li class="header-login">
+            <a href="/logout">Logout</a>
+          </li>
+        <% } else { %>
+          <li class="header-login">
+            <a href="/login">Login</a>
+          </li>
+        <% } %>
 
       </ul>
     </header>

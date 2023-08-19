@@ -3,25 +3,30 @@
 <main class="container">
     <div class="row">
         <h1 style="color: white">Manage Requests</h1>
-        <ul>
-            <% for(let i = 0; i < requests.length; i++){ %>
-                <li>
-                    <ul>
-                        <li><%= requests[i].summonerName %></li>
-                        <li>
+        <div class="row container">
+            <table>
+                <th>Summoner Name</th>
+                <th>Import</th>
+                <th>Delete Request</th>
+                <% for(let i = 0; i < requests.length; i++){ %>
+                    <tr>
+                    
+                        <td><%= requests[i].summonerName %></td>
+                        <td>
                             <form action="/summoner/<%= requests[i].summonerName %>/importMatches" enctype="multipart/form-data" method="POST">
                                 <button type="submit" class="btn btn-primary main-color-bg" value="submit">Import New Matches</button>
                             </form>
-                        </li>
-                        <li>
+                        </td>
+                        <td>
                             <form action="/requests/deleteRequest/<%= requests[i].summonerName %>?_method=DELETE" enctype="multipart/form-data" method="POST">
                                 <button type="submit" class="btn btn-primary main-color-bg fa fa-trash" value="submit"></button>
                             </form>
-                        </li>
-                    </ul>
-                </li
-            <% } %>
-        </ul>
+                        </td>
+                        
+                    </tr>
+                <% } %>
+            </table>
+        </div>
     </div>
 </main>
     

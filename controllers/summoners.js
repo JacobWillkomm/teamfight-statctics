@@ -134,6 +134,7 @@ module.exports = {
           }
 
           let allHeaderStats = {
+            set_9 : JSON.parse(JSON.stringify(stats)),
             set_8 : JSON.parse(JSON.stringify(stats)),
             set_7 : JSON.parse(JSON.stringify(stats)),
             allSets : JSON.parse(JSON.stringify(stats))
@@ -150,10 +151,10 @@ module.exports = {
           res.render("summonerProfile.ejs", { summoner: summoner, summonerMatches: summonerMatches, headerStats: allHeaderStats, user: req.user, assets: championAssets, itemAssets: itemAssets, traitAssets: traitAssets });
         } catch (err) {
           if(err instanceof TypeError){
-            res.render("summonerNotFound.ejs", {summonerName: req.params.summonerName})
+            res.render("summonerNotFound.ejs", {user: req.user, summonerName: req.params.summonerName})
           }
           else{
-            res.render("404.ejs")
+            res.render("404.ejs", {user: req.user})
             console.log(err);
           }
 
@@ -195,7 +196,7 @@ module.exports = {
       try {
         const summoners = await Summoner.find().sort().lean();
         console.log(summoners)
-        res.render("feed.ejs", { summoners: summoners });
+        res.render("feed.ejs", {user: req.user, summoners: summoners });
       } catch (err) {
         console.log(err);
       }
@@ -203,7 +204,7 @@ module.exports = {
     getSearch: async (req, res) => {
       try {
         console.log("REQ: ",req.body)
-        res.render("search.ejs");
+        res.render("search.ejs", {user: req.user});
       } catch (err){
         console.log(err);
       }
@@ -294,7 +295,7 @@ module.exports = {
         console.log(itemStats)
         
         console.log(summoner)
-        res.render("summonerStats.ejs", {unitStats: headUnitStats, itemStats: itemStats, championAssets: championAssets, itemAssets: itemAssets})
+        res.render("summonerStats.ejs", {user: req.user, unitStats: headUnitStats, itemStats: itemStats, championAssets: championAssets, itemAssets: itemAssets})
       } catch (err){
         console.log(err)
       }

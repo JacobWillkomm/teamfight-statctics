@@ -66,7 +66,7 @@ module.exports = {
         console.log("getMatches()")
         const matches = await Match.find().sort().lean();
         //console.log(matches)
-        res.render("matchfeed.ejs", { matches: matches });
+        res.render("matchfeed.ejs", {user: req.user, matches: matches });
       } catch (err) {
         console.log(err);
       }

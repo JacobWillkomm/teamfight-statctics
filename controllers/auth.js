@@ -7,6 +7,7 @@ exports.getLogin = (req, res) => {
     return res.redirect("/profiles");
   }
   res.render("login", {
+    user: req.user,
     title: "Login",
   });
 };
@@ -61,6 +62,7 @@ exports.getSignup = (req, res) => {
     return res.redirect("/profile");
   }
   res.render("signup", {
+    user: req.user,
     title: "Create Account",
   });
 };
